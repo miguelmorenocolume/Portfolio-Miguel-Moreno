@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <!-- Meta tags para Facebook (Open Graph) -->
+    <meta property="og:title" content="Miguel Moreno | Portfolio">
+    <meta property="og:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta property="og:image" content="src/img/miguel_moreno.jpg">
+    <meta property="og:url" content="https://mmorenocolume.com/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Miguel Moreno - Portfolio">
+
+    <!-- Meta tags para Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@miguelmoreno_13">
+    <meta name="twitter:title" content="Miguel Moreno | Portfolio">
+    <meta name="twitter:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="twitter:image" content="src/img/miguel_moreno.jpg">
+
+    <!-- Meta tags generales -->
+    <meta name="description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="keywords"
+        content="desarrollador de software, portfolio, proyectos, Miguel Moreno, tecnologías, FullStack, desarrollo web">
+    <meta name="author" content="Miguel Moreno">
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="script/script.js" defer></script>
+    <title>Miguel Moreno | Portfolio</title>
+</head>
+
+<body class="body">
+    <div class="body__background">
+        <picture>
+            <source srcset="src/img/background.jpg" media="(min-width: 1024px)">
+            <img id="background" class="body__background-image" src="src/img/background.jpg" alt="" loading="lazy"
+                aria-hidden="true" />
+        </picture>
+    </div>
+
+
+    <header class="header">
+        <picture>
+            <source srcset="src/icons/menu_icon_white.svg" media="(min-width: 1024px)">
+            <img class="header__icon" src="src/icons/menu_icon_white.svg" alt="Icono del menú" loading="lazy" />
+        </picture>
+
+        <div>
+            <nav>
+                <ul class="main-page__nav">
+                    <li id="software">SOFTWARE</li>
+                    <li id="data">DATA</li>
+                    <li id="fullstack">FULLSTACK</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Cerrar menú" title="Cerrar menú">
+            <picture>
+                <source srcset="src/icons/close_icon.svg" type="image/svg+xml">
+                <img src="src/icons/close_icon.svg" alt="Icono para cerrar el menú" class="mobile-menu__close-icon" />
+            </picture>
+        </button>
+
+        <ul class="mobile-menu__list">
+            <li><a href="about.html" title="Conoce más sobre mí">Sobre mí</a></li>
+            <li><a href="projects.html" title="Explora mis proyectos">Proyectos</a></li>
+            <li><a href="skills.html" title="Descubre mis habilidades">Habilidades</a></li>
+            <li><a href="education.html" title="Consulta mi formación académica">Educación</a></li>
+            <li><a href="contact.html" title="Ponte en contacto conmigo">Contacto</a></li>
+            <li><a href="cv.html" title="Descarga mi CV">CV</a></li>
+        </ul>
+    </nav>
+
+
+    <main class="main-page__container general-page__container">
+        <h1 class="main-page__container-title">Miguel Moreno</h1>
+        <hr>
+        <p class="main-page__container-subtitle">Software Developer</p>
+
+    </main>
+
+</body>
+
+</html>

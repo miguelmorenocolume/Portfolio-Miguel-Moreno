@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <!-- Meta tags para Facebook (Open Graph) -->
+    <meta property="og:title" content="Contacto | Miguel Moreno">
+    <meta property="og:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta property="og:image" content="src/img/miguel_moreno.jpg">
+    <meta property="og:url" content="https://mmorenocolume.com/contacto.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Miguel Moreno - Portfolio">
+
+    <!-- Meta tags para Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@miguelmoreno_13">
+    <meta name="twitter:title" content="Contacto | Miguel Moreno">
+    <meta name="twitter:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="twitter:image" content="src/img/miguel_moreno.jpg">
+
+    <!-- Meta tags generales -->
+    <meta name="description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="keywords" content="contacto, Miguel Moreno, formulario de contacto, mensaje, contacto directo">
+    <meta name="author" content="Miguel Moreno">
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="script/script.js" defer></script>
+    <title>Miguel Moreno | Contacto</title>
+</head>
+
+<body class="body regular-page">
+    <div class="body__background">
+        <picture>
+            <source srcset="src/img/background.jpg" media="(min-width: 1024px)">
+            <img id="background" class="body__background-image" src="src/img/background.jpg" alt="" loading="lazy"
+                aria-hidden="true" />
+        </picture>
+    </div>
+
+
+    <header class="header">
+        <picture>
+            <source srcset="src/icons/menu_icon_white.svg" media="(min-width: 1024px)">
+            <img class="header__icon" src="src/icons/menu_icon_white.svg" alt="Icono del menú" loading="lazy" />
+        </picture>
+        <div>
+            <nav>
+                <ul class="header__nav">
+                    <li><a href="index.html" title="Ir a la página de inicio">INICIO</a></li>
+                    <li><a href="about.html" title="Conoce más sobre mí">SOBRE MÍ</a></li>
+                    <li><a href="projects.html" title="Explora mis proyectos">PROYECTOS</a></li>
+                    <li><a href="skills.html" title="Descubre mis habilidades">HABILIDADES</a></li>
+                    <li><a href="education.html" title="Consulta mi formación académica">EDUCACIÓN</a></li>
+                    <li><a href="cv.html" title="Descarga mi currículum">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Cerrar menú" title="Cerrar menú">
+            <picture>
+                <source srcset="src/icons/close_icon.svg" type="image/svg+xml">
+                <img src="src/icons/close_icon.svg" alt="Icono para cerrar el menú" class="mobile-menu__close-icon" />
+            </picture>
+        </button>
+        <ul class="mobile-menu__list">
+            <li><a href="index.html" title="Ir a la página de inicio">Inicio</a></li>
+            <li><a href="about.html" title="Conoce más sobre mí">Sobre mí</a></li>
+            <li><a href="projects.html" title="Explora mis proyectos">Proyectos</a></li>
+            <li><a href="skills.html" title="Descubre mis habilidades">Habilidades</a></li>
+            <li><a href="education.html" title="Consulta mi formación académica">Educación</a></li>
+            <li><a href="cv.html" title="Descarga mi currículum">Cv</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contact-page__container general-page__container">
+        <h1 class="contact-title">Contacto</h1>
+        <p class="contact-description">
+            Si estás interesado en contactar conmigo, no dudes en hacerlo a través de este formulario, Gracias por tu
+            interés!
+        </p>
+
+        <form class="contact-form" action="#enviar-mail" method="POST" enctype="multipart/form-data">
+            <div class="contact-group">
+                <label for="nombre" class="contact-label">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="contact-input" required />
+            </div>
+
+            <div class="contact-group">
+                <label for="email" class="contact-label">Correo electrónico:</label>
+                <input type="email" id="email" name="email" class="contact-input" required />
+            </div>
+
+            <div class="contact-group">
+                <label for="mensaje" class="contact-label">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" class="contact-textarea" rows="5" required></textarea>
+            </div>
+
+            <div class="contact-group">
+                <label for="archivo" class="contact-label">Adjuntar archivo (opcional):</label>
+
+                <!-- Botón personalizado -->
+                <label for="archivo" class="file-upload-label">
+                    <picture>
+                        <img src="src/icons/upload-icon.svg" alt="Subir archivo" class="file-upload-icon" />
+                    </picture>
+                    <span>Seleccionar archivo</span>
+                </label>
+
+                <!-- Input real oculto -->
+                <input type="file" id="archivo" name="archivo" class="contact-file" />
+            </div>
+
+            <div class="contact-buttons">
+                <button type="submit" class="contact-button" title="botón de enviar">Enviar</button>
+                <button type="reset" class="contact-button contact-button--reset" title="botón de reseteo">Limpiar</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

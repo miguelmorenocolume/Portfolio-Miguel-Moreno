@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <!-- Meta tags para Facebook (Open Graph) -->
+    <meta property="og:title" content="Contacto | Miguel Moreno">
+    <meta property="og:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta property="og:image" content="src/img/miguel_moreno.jpg">
+    <meta property="og:url" content="https://mmorenocolume.com/cv.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Miguel Moreno - Portfolio">
+
+    <!-- Meta tags para Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@miguelmoreno_13">
+    <meta name="twitter:title" content="Currículum | Miguel Moreno">
+    <meta name="twitter:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="twitter:image" content="src/img/miguel_moreno.jpg">
+
+    <!-- Meta tags generales -->
+    <meta name="description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="keywords" content="currículum, Miguel Moreno, cv, contacto directo">
+    <meta name="author" content="Miguel Moreno">
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="script/script.js" defer></script>
+    <title>Miguel Moreno | Currículum</title>
+</head>
+
+<body class="body regular-page">
+    <div class="body__background">
+        <picture>
+            <source srcset="src/img/background.jpg" media="(min-width: 1024px)">
+            <img id="background" class="body__background-image" src="src/img/background.jpg" alt="" loading="lazy"
+                aria-hidden="true" />
+        </picture>
+    </div>
+
+
+    <header class="header">
+        <picture>
+            <source srcset="src/icons/menu_icon_white.svg" media="(min-width: 1024px)">
+            <img class="header__icon" src="src/icons/menu_icon_white.svg" alt="Icono del menú" loading="lazy" />
+        </picture>
+        <div>
+            <nav>
+                <ul class="header__nav">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="about.html">SOBRE MÍ</a></li>
+                    <li><a href="projects.html">PROYECTOS</a></li>
+                    <li><a href="skills.html">HABILIDADES</a></li>
+                    <li><a href="education.html">EDUCACIÓN</a></li>
+                    <li><a href="contact.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Cerrar menú" title="Cerrar menú">
+            <picture>
+                <source srcset="src/icons/close_icon.svg" type="image/svg+xml">
+                <img src="src/icons/close_icon.svg" alt="Icono para cerrar el menú" class="mobile-menu__close-icon" />
+            </picture>
+        </button>
+        <ul class="mobile-menu__list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Sobre mí</a></li>
+            <li><a href="projects.html">Proyectos</a></li>
+            <li><a href="skills.html">Habilidades</a></li>
+            <li><a href="education.html">Educación</a></li>
+            <li><a href="contact.html">CONTACTO</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="cv-page__container general-page__container">
+        <!-- Título -->
+        <h2 class="cv-title">Currículum</h2>
+
+        <!-- Carrusel -->
+        <div class="cv-carousel" id="cvCarousel">
+            <img src="src/img/cv-miguel-moreno-01.jpg" alt="CV Página 1" class="cv-carousel__img active">
+            <img src="src/img/cv-miguel-moreno-02.jpg" alt="CV Página 2" class="cv-carousel__img">
+            
+        <div class="cv-carousel__dots" id="cvCarouselDots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div>
+        </div>
+
+
+
+        <!-- Video -->
+        <div class="cv-video">
+            <video autoplay muted loop preload="none" controls poster="src/img/poster.png" class="cv-video__content">
+                <source src="src/video/video-miguel.webm" type="video/webm">
+                <source src="src/video/video-miguel.mp4" type="video/mp4">
+                Tu navegador no admite la etiqueta de video.
+            </video>
+        </div>
+
+
+        <!-- Subtítulo -->
+
+        <div class="cv-subtitle">
+            <div class="cv-icons">
+                <a href="https://www.instagram.com/miguelmoreno_13/" target="_blank" rel="noreferrer"
+                    aria-label="Enviar correo" title="Enviar correo">
+                    <picture>
+                        <img src="src/icons/instagram-icon.svg" alt="Correo icono" class="cv-icon" />
+                    </picture>
+                </a>
+                <a href="https://github.com/miguelmorenocolume" target="_blank" rel="noreferrer"
+                    aria-label="Ver repositorio en GitHub" title="Ver repositorio en GitHub">
+                    <picture>
+                        <img src="src/icons/github-icon.svg" alt="GitHub icono" class="cv-icon" />
+                    </picture>
+                </a>
+                <a href="https://www.linkedin.com/in/mmorenocolume/" target="_blank" rel="noreferrer"
+                    aria-label="Ver perfil en LinkedIn" title="Ver perfil en LinkedIn">
+                    <picture>
+                        <img src="src/icons/linkedin-icon.svg" alt="LinkedIn icono" class="cv-icon" />
+                    </picture>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

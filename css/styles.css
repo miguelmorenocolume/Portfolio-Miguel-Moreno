@@ -1,0 +1,1585 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+    user-select: none;
+}
+
+.body {
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+}
+
+hr {
+    border: none;
+    margin: 0.5rem 0;
+}
+
+.body-no-scroll {
+    overflow: hidden;
+}
+
+.body__background {
+    position: fixed;
+    top: -1rem;
+    left: -1rem;
+    width: 120%;
+    height: 120%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+.body__background-image {
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    filter: blur(6px);
+    transition: filter 1s ease;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 15%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09));
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-menu__list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.mobile-menu__close {
+    background: none;
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    padding: 0;
+}
+
+.mobile-menu__close-icon {
+    width: 28px;
+    height: 28px;
+    transition: filter 0.3s;
+}
+
+.mobile-menu__close:hover .mobile-menu__close-icon {
+    filter: brightness(0.8);
+}
+
+
+.header {
+    position: relative;
+    padding: 1.5rem;
+    height: 60px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+}
+
+.header.hiden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.header__icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.regular-page .header__icon {
+    display: none;
+}
+
+.header__icon:hover {
+    transform: scale(1.1);
+}
+
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 4.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.main-page__nav {
+    gap: 9.5rem;
+}
+
+li {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    font-weight: bold;
+}
+
+li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+li:hover::after {
+    width: 100%;
+}
+
+li.active::after {
+    width: 100%;
+}
+
+
+.main-page__container {
+    position: absolute;
+    /* Usamos posición absoluta para colocarlo respecto al viewport */
+    top: 50%;
+    /* Lo posiciona verticalmente al 50% */
+    left: 50%;
+    /* Lo posiciona horizontalmente al 50% */
+    transform: translate(-50%, -50%);
+    /* Ajusta la posición para centrarlo perfectamente */
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09));
+    width: 60%;
+    padding: 2rem 0;
+    border-bottom: white 1px solid;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Animación para el título (zoom y fade-in) */
+.main-page__container-title {
+    font-size: 7rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: zoomFadeIn 0.5s forwards;
+}
+
+@keyframes zoomFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animación para el subtítulo (aparece después del título) */
+.main-page__container-subtitle {
+    font-size: 2.5rem;
+    letter-spacing: 1rem;
+    margin-top: 0;
+    opacity: 0;
+    animation: fadeInSubtitle 0.75s 0.25s forwards;
+
+}
+
+@keyframes fadeInSubtitle {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* About page container */
+.about-page__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    text-align: justify;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* About content (image and text side by side) */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Styles for the image */
+.about-image {
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    /* Mantener la imagen cuadrada */
+    object-fit: cover;
+    /* Asegurar que la imagen no se deforme */
+    border-bottom: 2px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: zoomFadeIn 0.5s forwards;
+}
+
+/* About text styles */
+.about-text {
+    width: 55%;
+}
+
+.about-title {
+    opacity: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: zoomFadeIn 0.5s 0.1s forwards;
+}
+
+.about-description {
+    opacity: 0;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    animation: zoomFadeIn 0.5s 0.3s forwards;
+}
+
+.projects-page__container {
+    color: white;
+    text-align: center;
+    width: 95%;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09));
+    padding: 3rem 2rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.projects-title {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 2rem;
+    animation: zoomFadeIn 0.6s ease-in-out forwards;
+}
+
+.project-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 proyectos por fila */
+    gap: 1rem;
+    /* Espacio entre proyectos */
+    justify-items: stretch;
+    width: 100%;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    text-align: left;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    border-bottom: 2px solid white;
+    will-change: transform;
+    contain: layout;
+}
+
+.project-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.project-card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.project-card img {
+    max-width: 25%;
+    /* La imagen puede ocupar hasta el 100% del ancho disponible */
+    height: auto;
+    /* Mantener la proporción de la imagen */
+    margin-right: 1.5rem;
+    /* Espacio entre la imagen y el texto */
+}
+
+.project-text {
+    display: flex;
+    flex-direction: column;
+    /* Asegura que el título esté encima del párrafo */
+    text-align: justify;
+}
+
+.project-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.project-divider {
+    grid-column: 1 / -1;
+    /* Ocupa todas las columnas del grid */
+    height: 2px;
+    background-color: white;
+    opacity: 0.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    animation: extendLine 1s ease-in-out forwards;
+}
+
+/* Animación opcional para que la línea aparezca suavemente */
+@keyframes extendLine {
+    from {
+        width: 0%;
+        opacity: 0;
+    }
+
+    to {
+        width: 100%;
+        opacity: 0.3;
+    }
+}
+
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09));
+    color: white;
+    padding: 2rem;
+    width: 70%;
+    max-height: 95vh;
+    /* evita que se salga del viewport */
+    overflow-y: auto;
+    /* permite hacer scroll si el contenido es más largo */
+    margin: 2rem auto;
+    /* margen vertical para respiración */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-out;
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: #888 transparent;
+    /* Firefox */
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+    filter: invert(1);
+}
+
+.modal-close-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+    /* para que sea blanco si es un SVG oscuro */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+.modal-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.modal-video {
+    width: 75%;
+    margin: 2rem auto 0 auto;
+    /* Centrado horizontal y margen superior */
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.modal-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.github-icon {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.github-icon:hover {
+    transform: scale(1.1);
+}
+
+.modal-single-img {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-single-img img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== SKILLS PAGE ===== */
+
+.skills-page__container {
+    color: white;
+    padding: 3rem 2rem;
+    padding-bottom: 0.05rem;
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 1rem;
+    text-align: left;
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+}
+
+/* Título principal */
+.skills-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: left;
+    animation: zoomFadeIn 0.6s ease-out forwards;
+}
+
+/* Sección de categorías */
+.skills-section {
+    margin-bottom: 4rem;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Títulos de cada categoría */
+.skills-section__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    /* Esto asegura que la línea ocupe el ancho completo */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho total */
+    position: relative;
+}
+
+
+
+/* Lista de habilidades como línea horizontal */
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: flex-start;
+    /* Esto alinea a la izquierda */
+}
+
+/* Cada badge */
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 0.6rem 1rem;
+    font-weight: 500;
+    color: white;
+    justify-content: flex-start;
+
+}
+
+
+.skill-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===== EDUCATION PAGE ===== */
+.education-page__container {
+    color: white;
+    padding: 3rem 2rem;
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.education-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: zoomFadeIn 0.6s ease-out forwards;
+    text-align: left;
+}
+
+/* Sección que contiene todas las tarjetas */
+.education-section {
+    display: grid;
+    gap: 1rem;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.education-subtitle {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    border-left: 4px solid #ffffff;
+    padding-left: 1rem;
+}
+
+/* Tarjeta de educación */
+.education-card {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1.5rem;
+    gap: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    border-right: 3px solid #ffffff;
+}
+
+.education-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.education-degree {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.education-center {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.education-dates {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+
+
+.contact-page__container {
+    color: white;
+    padding: 3rem 2rem;
+    width: 65%;
+    margin: 0 auto;
+    height: auto;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    animation: zoomFadeIn 0.6s ease-out forwards;
+    text-align: left;
+}
+
+.contact-description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* === BLOQUES DE FORMULARIO === */
+.contact-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+}
+
+/* Etiquetas */
+.contact-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* Inputs y Textarea */
+.contact-input,
+.contact-textarea {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    outline: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-textarea {
+    resize: none;
+    height: 100px;
+}
+
+.contact-file {
+    display: none;
+}
+
+/* Estilo del label que actúa como botón */
+.file-upload-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.6rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 0.75rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.file-upload-label:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.file-upload-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.contact-input:focus,
+.contact-textarea:focus,
+.contact-file:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Botones */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+}
+
+.contact-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    background: linear-gradient(135deg, rgba(70, 130, 180, 0.2), rgba(70, 130, 180, 0.1));
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: scale(1.05);
+}
+
+.contact-button--reset {
+    background-color: rgba(178, 34, 34, 0.6);
+    color: white;
+}
+
+
+
+/* ====== CV PAGE ====== */
+.cv-page__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+    color: white;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 3rem 2rem;
+    width: 75%;
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Título */
+.cv-title {
+    grid-column: 1 / -1;
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 1rem;
+    animation: zoomFadeIn 0.6s ease-out forwards;
+}
+
+/* Carrusel */
+.cv-carousel {
+    grid-row: 2 / span 2;
+    grid-column: 1 / 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cv-carousel__img {
+    max-width: 100%;
+    display: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cv-carousel__img.active {
+    display: block;
+}
+
+.cv-carousel__dots {
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.cv-carousel__dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cv-carousel__dots .dot.active {
+    background-color: white;
+    transform: scale(1.3);
+}
+
+/* Video */
+.cv-video {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv-video__content {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el contenedor del subtítulo */
+.cv-subtitle {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    display: flex;
+    /* Usamos flexbox */
+    justify-content: center;
+    /* Centra los íconos horizontalmente */
+    align-items: center;
+    /* Centra los íconos verticalmente */
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid white;
+    height: 100%;
+    /* Asegura que el contenedor tenga altura completa */
+}
+
+/* Contenedor para los íconos */
+.cv-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Centra los íconos verticalmente dentro del contenedor */
+    gap: 2rem;
+    /* Espacio entre los íconos */
+}
+
+/* Estilo para los íconos */
+.cv-icon {
+    width: 40px;
+    /* Tamaño base de los íconos */
+    height: 40px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efecto hover en los íconos */
+.cv-icon:hover {
+    opacity: 0.8;
+    /* Da un efecto visual al pasar el ratón */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fallback para Safari/iOS si backdrop-filter falla */
+@supports (-webkit-touch-callout: none) {
+    .project-card {
+        background-color: rgba(255, 255, 255, 0.12);
+        /* Fondo alternativo más sólido */
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+}
+
+
+/* Media Queries */
+
+/* Pantallas grandes y de escritorio (1334px o más) */
+@media (max-width: 1334px) {
+    .main-page__container-title {
+        font-size: 5.5rem;
+        /* Ajustar tamaño del título */
+    }
+
+    .main-page__container-subtitle {
+        font-size: 1.75rem;
+        /* Ajustar tamaño del subtítulo */
+    }
+
+    .header__icon {
+        width: 32px;
+        /* Ajustar tamaño del icono */
+    }
+
+    .main-page__container {
+        top: 50%;
+        /* Ajustar la posición del contenedor */
+    }
+
+    .mobile-menu {
+        width: 20%;
+    }
+
+    /* Para las tablets, ajustar proyectos */
+    .project-box {
+        grid-template-columns: 1fr;
+        /* Un solo proyecto por fila */
+    }
+
+    .project-card img {
+        width: 40%;
+        /* Reducir tamaño de la imagen */
+        margin-bottom: 1rem;
+    }
+
+    .about-title {
+        font-size: 2rem;
+        /* Ajustar tamaño del título */
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+        /* Ajustar tamaño del párrafo */
+    }
+
+    .project-card h3 {
+        font-size: 2rem;
+        line-height: 1.4;
+    }
+
+    .project-card p {
+        font-size: 1.35rem;
+        line-height: 1.4;
+    }
+
+    .modal-content {
+        width: 85%;
+        max-height: 90vh;
+        padding: 2rem;
+    }
+
+
+
+}
+
+@media (max-width: 1334px) and (min-width: 1024px) {
+
+    .cv-page__container {
+        width: 90%;
+
+    }
+
+    .cv-video__content {
+        width: auto;
+        max-height: 325px;
+    }
+}
+
+
+
+/* Pantallas medianas (768px a 1023px) */
+@media (max-width: 1049px) {
+    .main-page__container-title {
+        font-size: 4rem;
+        /* Reducir tamaño del título */
+    }
+
+    .main-page__container-subtitle {
+        font-size: 1.5rem;
+        /* Reducir tamaño del subtítulo */
+    }
+
+    .header__icon {
+        width: 28px;
+        /* Reducir tamaño del icono */
+    }
+
+    .regular-page .header__icon {
+        display: block;
+    }
+
+    .main-page__container {
+        width: 80%;
+        padding: 1.5rem 0;
+        /* Ajustar ancho y padding del contenedor */
+    }
+
+    .mobile-menu {
+        width: 100%;
+    }
+
+    .about-title {
+        display: none;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        width: 60%;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text {
+        width: 90%;
+    }
+
+
+    .about-description {
+        font-size: 1.1rem;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .projects-page__container {
+        margin-top: 0;
+    }
+
+    .project-card img {
+        width: 80%;
+        /* Reducir tamaño de la imagen */
+        margin-bottom: 1rem;
+    }
+
+    .project-text {
+        width: 100%;
+        /* El texto ocupará todo el ancho disponible */
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+        /* Ajustar tamaño del título */
+    }
+
+    .project-card p {
+        font-size: 1rem;
+        /* Ajustar tamaño del párrafo */
+    }
+
+    .modal-content {
+        width: 85%;
+        padding: 2rem;
+    }
+
+    .modal-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-page__container {
+        margin-top: 0;
+    }
+
+    .skills-page__container {
+        padding: 2rem 1.5rem;
+    }
+
+    .skills-title {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .skills-section__title {
+        font-size: 1.6rem;
+    }
+
+    .skill-list {
+        gap: 0.4rem;
+    }
+
+    .skill-item {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .skill-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .education-page__container {
+        margin-top: 0;
+    }
+
+    .education-title {
+        font-size: 2.5rem;
+    }
+
+    .education-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .education-degree {
+        font-size: 1.4rem;
+    }
+
+    .education-center,
+    .education-dates {
+        font-size: 0.95rem;
+    }
+
+    .education-page__container {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-page__container {
+        width: 85%;
+    }
+
+    .cv-page__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 2rem;
+        margin-top: 0;
+        align-items: center;
+        width: 95%;
+    }
+
+    .cv-title {
+        font-size: 2.5rem;
+        grid-row: 1 / 2;
+        order: 1;
+        text-align: center;
+    }
+
+
+    .cv-subtitle {
+        font-size: 1rem;
+        grid-row: 2 / 3;
+        grid-column: 1 / -1;
+        order: 2;
+        margin-top: -1rem;
+        text-align: justify;
+    }
+
+    .cv-carousel {
+        grid-row: 3 / 4;
+        order: 3;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cv-video {
+        display: none;
+    }
+}
+
+
+/* Pantallas pequeñas (480px a 767px) */
+@media (max-width: 767px) {
+    .main-page__container-title {
+        font-size: 3rem;
+        /* Reducir aún más el tamaño del título */
+    }
+
+    .main-page__container-subtitle {
+        font-size: 1.25rem;
+        letter-spacing: 0.5rem;
+        /* Reducir tamaño y espaciado del subtítulo */
+    }
+
+    .header__icon {
+        width: 24px;
+        /* Reducir tamaño del icono */
+    }
+
+
+    .main-page__nav {
+        gap: 4rem;
+        /* Reducir el espacio entre los elementos de la lista */
+    }
+
+    .main-page__container {
+        width: 90%;
+        padding: 1rem 0;
+        /* Ajustar ancho y padding del contenedor */
+    }
+
+    /* Para pantallas muy pequeñas, ajustar proyectos */
+    .project-box {
+        grid-template-columns: 1fr;
+        /* Un solo proyecto por fila */
+    }
+
+    .project-card {
+        flex-direction: column;
+        /* Colocar la imagen arriba (aunque no haya texto) */
+        align-items: center;
+        /* Centrar contenido */
+        text-align: center;
+        /* Centramos todo en el contenedor */
+
+        width: 100%;
+    }
+
+    .project-card img {
+        width: 100%;
+        /* La imagen ocupa el 100% del contenedor */
+        height: auto;
+        /* Mantener la proporción de la imagen */
+        max-width: 100%;
+        /* Asegura que no se salga del contenedor */
+        margin: 0 auto;
+        /* Centrar la imagen horizontalmente */
+        display: block;
+        /* Asegura que se comporte como un bloque para centrado */
+    }
+
+    /* Desactivar la visualización del texto en móviles */
+    .project-card h3,
+    .project-card p {
+        display: none;
+        /* Ocultar el título y la descripción */
+    }
+
+    .projects-title {
+        font-size: 3rem;
+        /* Ajustar tamaño del título */
+    }
+
+    .modal-gallery {
+        display: none;
+    }
+
+    .modal-single-img {
+        display: none;
+    }
+
+    .skills-page__container {
+        padding: 1.5rem 1rem;
+    }
+
+    .skills-title {
+        font-size: 2.2rem;
+
+        margin-bottom: 2rem;
+    }
+
+    .skills-section__title {
+        font-size: 1.5rem;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        padding-bottom: 0.3rem;
+    }
+
+    .skill-list {
+        gap: 0.8rem;
+
+    }
+
+    .skill-item {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .skill-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .education-title {
+        font-size: 2rem;
+    }
+
+    .education-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .education-degree {
+        font-size: 1.2rem;
+    }
+
+    .education-center,
+    .education-dates {
+        font-size: 0.85rem;
+    }
+
+    .education-page__container {
+        padding: 1.5rem 1rem;
+    }
+
+    .education-card {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .contact-page__container {
+        margin-top: 0;
+        width: 95%;
+    }
+
+    .contact-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-description {
+        font-size: 0.9rem;
+    }
+
+    .contact-label {
+        font-size: 1rem;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+
+    .cv-carousel__dots .dot {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+/* Pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 479px) {
+    .main-page__container-title {
+        font-size: 2.5rem;
+        /* Reducir tamaño del título */
+    }
+
+    .main-page__container-subtitle {
+        font-size: 1rem;
+        letter-spacing: 0.25rem;
+        /* Reducir tamaño y espaciado del subtítulo */
+    }
+
+    .header__icon {
+        width: 20px;
+        /* Reducir tamaño del icono */
+    }
+
+    .main-page__container {
+        width: 95%;
+        padding: 0.5rem 0;
+        /* Ajustar ancho y padding del contenedor */
+    }
+
+    .main-page__nav {
+        gap: 1.25rem;
+        /* Reducir el espacio entre los elementos de la lista */
+        font-size: 8px;
+    }
+
+
+    li::after {
+        height: 0.5px;
+    }
+
+    .about-description {
+        font-size: 0.9rem;
+    }
+
+    .about-image {
+        width: 70%;
+    }
+
+
+    .projects-title {
+        font-size: 2rem;
+        /* Ajustar tamaño del título */
+    }
+
+    .project-divider p {
+        font-size: 0.8rem;
+        /* Ajustar tamaño del texto */
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .modal-description {
+        font-size: 0.75rem;
+    }
+
+    .modal-video {
+        width: 90%;
+    }
+
+    .projects-title {
+        font-size: 2rem;
+    }
+
+}

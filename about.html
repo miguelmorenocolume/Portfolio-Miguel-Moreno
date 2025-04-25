@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <!-- Meta tags para Facebook (Open Graph) -->
+    <meta property="og:title" content="Sobre mí | Miguel Moreno">
+    <meta property="og:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta property="og:image" content="src/img/miguel_moreno.jpg">
+    <meta property="og:url" content="https://mmorenocolume.com/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Miguel Moreno - Portfolio">
+
+    <!-- Meta tags para Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@miguelmoreno_13">
+    <meta name="twitter:title" content="Sobre mí | Miguel Moreno">
+    <meta name="twitter:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="twitter:image" content="src/img/miguel_moreno.jpg">
+
+    <!-- Meta tags generales -->
+    <meta name="description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="keywords" content="desarrollador de software, FullStack, diseño web, Miguel Moreno">
+    <meta name="author" content="Miguel Moreno">
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="script/script.js" defer></script>
+    <title>Miguel Moreno | Sobre mí</title>
+</head>
+
+<body class="body regular-page">
+    <div class="body__background">
+        <picture>
+            <source srcset="src/img/background.jpg" media="(min-width: 1024px)">
+            <img id="background" class="body__background-image" src="src/img/background.jpg" alt="" loading="lazy"
+                aria-hidden="true" />
+        </picture>
+    </div>
+
+    <header class="header">
+        <picture>
+            <source srcset="src/icons/menu_icon_white.svg" media="(min-width: 1024px)">
+            <img class="header__icon" src="src/icons/menu_icon_white.svg" alt="Icono del menú" loading="lazy" />
+        </picture>
+        <div>
+            <nav>
+                <ul class="header__nav">
+                    <li><a href="index.html" title="Ir a Inicio">INICIO</a></li>
+                    <li><a href="projects.html" title="Ir a Proyectos">PROYECTOS</a></li>
+                    <li><a href="skills.html" title="Ir a Habilidades">HABILIDADES</a></li>
+                    <li><a href="education.html" title="Ir a Educación">EDUCACIÓN</a></li>
+                    <li><a href="contact.html" title="Ir a Contacto">CONTACTO</a></li>
+                    <li><a href="cv.html" title="Ir a CV">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Cerrar menú" title="Cerrar menú">
+            <picture>
+                <source srcset="src/icons/close_icon.svg" type="image/svg+xml">
+                <img src="src/icons/close_icon.svg" alt="Icono para cerrar el menú" class="mobile-menu__close-icon" />
+            </picture>
+        </button>
+        <ul class="mobile-menu__list">
+            <li><a href="index.html" title="Ir a Inicio">Inicio</a></li>
+            <li><a href="projects.html" title="Ir a Proyectos">Proyectos</a></li>
+            <li><a href="skills.html" title="Ir a Habilidades">Habilidades</a></li>
+            <li><a href="education.html" title="Ir a Educación">Educación</a></li>
+            <li><a href="contact.html" title="Ir a Contacto">Contacto</a></li>
+            <li><a href="cv.html" title="Ir a CV">Cv</a></li>
+        </ul>
+    </nav>
+
+    <main class="about-page__container general-page__container">
+        <div class="about-content">
+            <img src="src/img/miguel_moreno.jpg" alt="Miguel Moreno" class="about-image"
+                title="Foto de Miguel Moreno" />
+
+            <div class="about-text">
+                <h2 class="about-title" title="Título de la sección">Sobre mí</h2>
+                <br>
+                <p class="about-description" title="Descripción sobre Miguel Moreno">
+                    Soy un <b>Desarrollador de Software</b>, actualmente cursando un máster en diseño web y FullStack
+                    Developer, apasionado por el aprendizaje continuo y orientado a la resolución de desafíos lógicos.
+                    Con una sólida base en desarrollo de software, especialmente en entornos Back-End, busco una
+                    oportunidad laboral para aplicar y expandir mis conocimientos en un equipo colaborativo que impulse
+                    mi crecimiento y fomente mi curiosidad profesional.
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

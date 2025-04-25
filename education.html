@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <!-- Meta tags para Facebook (Open Graph) -->
+    <meta property="og:title" content="Educación | Miguel Moreno">
+    <meta property="og:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta property="og:image" content="src/img/miguel_moreno.jpg">
+    <meta property="og:url" content="https://mmorenocolume.com/educacion.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Miguel Moreno - Portfolio">
+
+    <!-- Meta tags para Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@miguelmoreno_13">
+    <meta name="twitter:title" content="Educación | Miguel Moreno">
+    <meta name="twitter:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="twitter:image" content="src/img/miguel_moreno.jpg">
+
+    <!-- Meta tags generales -->
+    <meta name="description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
+    <meta name="keywords" content="educación, formación, máster, desarrollo web, aplicaciones multiplataforma, bachillerato, Miguel Moreno">
+    <meta name="author" content="Miguel Moreno">
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="script/script.js" defer></script>
+    <title>Miguel Moreno | Educación</title>
+</head>
+
+<body class="body regular-page">
+    <div class="body__background">
+        <picture>
+          <source srcset="src/img/background.jpg" media="(min-width: 1024px)">
+          <img id="background" class="body__background-image" src="src/img/background.jpg" alt="" loading="lazy"
+            aria-hidden="true" />
+        </picture>
+      </div>
+
+    <header class="header">
+        <picture>
+            <source srcset="src/icons/menu_icon_white.svg" media="(min-width: 1024px)">
+            <img class="header__icon" src="src/icons/menu_icon_white.svg" alt="Icono del menú" loading="lazy" />
+          </picture>
+        <div>
+            <nav>
+                <ul class="header__nav">
+                    <li><a href="index.html" title="Ir a la página de inicio">INICIO</a></li>
+                    <li><a href="about.html" title="Conoce más sobre mí">SOBRE MÍ</a></li>
+                    <li><a href="projects.html" title="Explora mis proyectos">PROYECTOS</a></li>
+                    <li><a href="skills.html" title="Descubre mis habilidades">HABILIDADES</a></li>
+                    <li><a href="contact.html" title="Contáctame">CONTACTO</a></li>
+                    <li><a href="cv.html" title="Descarga mi CV">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Cerrar menú" title="Cerrar menú">
+            <picture>
+                <source srcset="src/icons/close_icon.svg" type="image/svg+xml">
+                <img src="src/icons/close_icon.svg" alt="Icono para cerrar el menú" class="mobile-menu__close-icon" />
+            </picture>
+        </button>
+        <ul class="mobile-menu__list">
+            <li><a href="index.html" title="Ir a la página de inicio">Inicio</a></li>
+            <li><a href="about.html" title="Conoce más sobre mí">Sobre mí</a></li>
+            <li><a href="projects.html" title="Explora mis proyectos">Proyectos</a></li>
+            <li><a href="skills.html" title="Descubre mis habilidades">Habilidades</a></li>
+            <li><a href="contact.html" title="Contáctame">Contacto</a></li>
+            <li><a href="cv.html" title="Descarga mi CV">Cv</a></li>
+        </ul>
+    </nav>
+    <main class="education-page__container general-page__container">
+        <h1 class="education-title">Educación</h1>
+
+        <section class="education-section">
+
+            <!-- POSGRADO -->
+            <h2 class="education-subtitle">Estudios de Posgrado</h2>
+            <div class="education-card">
+                <div class="education-info">
+                    <h3 class="education-degree">Máster en Diseño Web y FullStack Developer</h3>
+                    <p class="education-center">Centros de Estudios de Innovación</p>
+                    <p class="education-dates">Enero 2025 - Junio 2025</p>
+                </div>
+            </div>
+
+
+
+            <!-- CFGS -->
+            <h2 class="education-subtitle">Formación Profesional</h2>
+            <div class="education-card">
+                <div class="education-info">
+                    <h3 class="education-degree">CFGS Desarrollo de Aplicaciones Multiplataformas</h3>
+                    <p class="education-center">IES Padre José Miravent</p>
+                    <p class="education-dates">Septiembre 2022 - Junio 2024</p>
+                </div>
+            </div>
+
+
+
+            <!-- BACHILLERATO -->
+            <h2 class="education-subtitle">Educación Secundaria</h2>
+            <div class="education-card">
+                <div class="education-info">
+                    <h3 class="education-degree">Bachillerato Ciencias de la Salud</h3>
+                    <p class="education-center">IES Padre José Miravent</p>
+                    <p class="education-dates">Septiembre 2018 - Julio 2020</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+
+</html>
