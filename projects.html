@@ -3,17 +3,18 @@
 
 <head>
     <meta charset="UTF-8" />
+
+    <!-- Fuente externa -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-    <!-- Meta tags para Facebook (Open Graph) -->
+
+    <!-- Meta para redes sociales (Open Graph y Twitter) -->
     <meta property="og:title" content="Habilidades | Miguel Moreno">
     <meta property="og:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
     <meta property="og:image" content="src/img/miguel_moreno.jpg">
     <meta property="og:url" content="https://mmorenocolume.com/habilidades.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Miguel Moreno - Portfolio">
-
-    <!-- Meta tags para Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@miguelmoreno_13">
     <meta name="twitter:title" content="Habilidades | Miguel Moreno">
@@ -26,28 +27,38 @@
         content="habilidades, lenguajes de programación, frameworks, bases de datos, herramientas, Miguel Moreno">
     <meta name="author" content="Miguel Moreno">
 
+    <!-- CSS y JS -->
     <link rel="stylesheet" href="css/styles.css" />
     <script src="script/script.js" defer></script>
+
     <title>Miguel Moreno | Proyectos</title>
 </head>
 
-<body class="body regular-page">
+<body class="body">
+    <!-- Contenedor principal del fondo de la página -->
     <div class="body__background">
         <picture>
+            <!-- Imagen de fondo para pantallas grandes -->
             <source srcset="src/img/background.jpg" media="(min-width: 1024px)">
+            <!-- Imagen de fondo por defecto -->
             <img id="background" class="body__background-image" src="src/img/background.jpg" alt="" loading="lazy"
                 aria-hidden="true" />
         </picture>
     </div>
 
+    <!-- Encabezado de la página -->
     <header class="header">
         <picture>
+            <!-- Icono del menú para pantallas grandes -->
             <source srcset="src/icons/menu_icon_white.svg" media="(min-width: 1024px)">
+            <!-- Icono del menú por defecto -->
             <img class="header__icon" src="src/icons/menu_icon_white.svg" alt="Icono del menú" loading="lazy" />
         </picture>
         <div>
+            <!-- Navegación principal para la versión de escritorio -->
             <nav>
                 <ul class="header__nav">
+                    <!-- Categorías principales del sitio -->
                     <li><a href="index.html" title="Ir a Inicio">INICIO</a></li>
                     <li><a href="about.html" title="Ir a Sobre mí">SOBRE MÍ</a></li>
                     <li><a href="skills.html" title="Ir a Habilidades">HABILIDADES</a></li>
@@ -58,13 +69,17 @@
             </nav>
         </div>
     </header>
+    <!-- Menú de navegación para móviles (aparece al hacer clic en el icono de menú) -->
     <nav class="mobile-menu" id="mobileMenu">
+        <!-- Botón para cerrar el menú móvil -->
         <button class="mobile-menu__close" id="closeMenu" aria-label="Cerrar menú" title="Cerrar menú">
             <picture>
+                <!-- Icono de cierre en formato SVG -->
                 <source srcset="src/icons/close_icon.svg" type="image/svg+xml">
                 <img src="src/icons/close_icon.svg" alt="Icono para cerrar el menú" class="mobile-menu__close-icon" />
             </picture>
         </button>
+        <!-- Lista de enlaces del menú móvil -->
         <ul class="mobile-menu__list">
             <li><a href="index.html" title="Ir a Inicio">Inicio</a></li>
             <li><a href="about.html" title="Ir a Sobre mí">Sobre mí</a></li>
@@ -74,59 +89,69 @@
             <li><a href="cv.html" title="Ir a CV">Cv</a></li>
         </ul>
     </nav>
+
     <section class="projects-page__container general-page__container">
+        <!-- Título de la sección de proyectos -->
         <h2 class="projects-title">Mis Proyectos</h2>
+
+        <!-- Contenedor general de las tarjetas de proyectos -->
         <div class="project-box">
+
+            <!-- Tarjeta individual de proyecto -->
             <div class="project-card">
                 <img src="src/img/light_has_no_shadows_logo.jpg" alt="Light has no Shadows" />
                 <div class="project-text">
                     <h3>Light has no Shadows</h3>
-                    <p>Videojuego 3D con temática de terror psicológico. La historia del juego es totalmente original y
-                        el jugador será capaz de entenderla a través de interacciones con el escenario y diferentes
-                        eventos que suceden a lo largo de la experiencia.</p>
+                    <p>Videojuego 3D de terror psicológico con historia original basada en la exploración e interacción
+                        con el entorno.</p>
                 </div>
             </div>
+
+            <!-- Segunda tarjeta de proyecto -->
             <div class="project-card">
                 <img src="src/img/data_of_thrones_logo.jpg" alt="DataOfThrones" />
                 <div class="project-text">
                     <h3>DataOfThrones</h3>
-                    <p>Aplicación completa para dispositivos móviles escrita en Kotlin desarrollada en Android Studio
-                        que accede a una API pública de Juego de Tronos con varias funcionalidades que permiten acceder
-                        a un listado de personajes, ver sus detalles, añadirlos a favoritos entre otras.</p>
+                    <p>Aplicación móvil en Kotlin que consume una API pública de Juego de Tronos con funcionalidades de
+                        listado, detalles y favoritos.</p>
                 </div>
             </div>
 
+            <!-- Tercera tarjeta de proyecto -->
             <div class="project-card">
                 <img src="src/img/python_django_logo.jpg" alt="Proyecto Python" />
                 <div class="project-text">
                     <h3>Proyecto Python Django</h3>
-                    <p>Pequeño proyecto para entrar en contacto con el framework django de python en el que se ha
-                        migrado completamente un front-end que es gestionado a través del back-end y una base de datos
-                        con modelos adaptados al proyecto.</p>
+                    <p>Proyecto de aprendizaje con Django donde el front-end es gestionado dinámicamente por el back-end
+                        y bases de datos adaptadas.</p>
                 </div>
             </div>
 
+            <!-- Divider o separador indicando que hay más proyectos en camino -->
             <div class="project-divider">
                 <p>trabajando en más proyectos...</p>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox para "Light has no Shadows" -->
+    <!-- Lightbox para el proyecto "Light has no Shadows" -->
     <div id="modal-light" class="modal">
         <div class="modal-content">
+            <!-- Botón para cerrar el modal -->
             <button class="modal-close" data-target="modal-light" aria-label="Cerrar modal">
                 <picture>
                     <img src="src/icons/close_icon.svg" alt="Cerrar" class="modal-close-icon" />
                 </picture>
             </button>
+
+            <!-- Título y descripción del modal -->
             <h3>Light has no Shadows</h3>
             <p class="modal-description">
-                Videojuego 3D de terror psicológico con historia interactiva. La jugabilidad se centra en la
-                exploración, la narrativa ambiental y la gestión de recursos emocionales. Inspirado en obras como Silent
+                Videojuego 3D de terror psicológico enfocado en narrativa ambiental y exploración. Inspirado en Silent
                 Hill y Resident Evil.
             </p>
 
+            <!-- Galería de imágenes dentro del modal -->
             <div class="modal-gallery">
                 <picture>
                     <img src="src/img/ozul.jpg" alt="Captura 1 del juego Light has no Shadows" />
@@ -139,6 +164,7 @@
                 </picture>
             </div>
 
+            <!-- Video de gameplay en el modal -->
             <div class="modal-video">
                 <iframe src="https://www.youtube.com/embed/5tg5CXV70Vo" title="Gameplay de Light has no Shadows"
                     frameborder="0"
@@ -149,21 +175,24 @@
         </div>
     </div>
 
-    <!-- Lightbox para "DataOfThrones" -->
+    <!-- Lightbox para el proyecto "DataOfThrones" -->
     <div id="modal-data" class="modal">
         <div class="modal-content">
+            <!-- Botón de cerrar -->
             <button class="modal-close" data-target="modal-data" aria-label="Cerrar modal" title="Cerrar modal">
                 <picture>
                     <img src="src/icons/close_icon.svg" alt="Cerrar" class="modal-close-icon" />
                 </picture>
             </button>
+
+            <!-- Contenido del modal -->
             <h3>DataOfThrones</h3>
             <p class="modal-description">
-                Aplicación completa para dispositivos móviles escrita en Kotlin desarrollada en Android Studio que
-                accede a una API pública de Juego de Tronos con varias funcionalidades que permiten acceder a un listado
-                de personajes, ver sus detalles, añadirlos a favoritos entre otras.
+                App móvil en Kotlin que consume API de Juego de Tronos: listado de personajes, detalles, favoritos y
+                más.
             </p>
 
+            <!-- Galería de capturas de la app -->
             <div class="modal-gallery modal-gallery-data">
                 <picture>
                     <img src="src/img/dataofthrones_1.jpg" alt="Pantalla de búsqueda en DataOfThrones" />
@@ -176,6 +205,7 @@
                 </picture>
             </div>
 
+            <!-- Enlace al repositorio de GitHub -->
             <div class="modal-link">
                 <a href="https://github.com/miguelmorenocolume/DataOfThronesAPI" target="_blank" rel="noreferrer"
                     aria-label="Ver repositorio en GitHub" title="Ver repositorio en GitHub">
@@ -184,31 +214,34 @@
                     </picture>
                 </a>
             </div>
-            
         </div>
     </div>
 
-    <!-- Lightbox para "Proyecto Python Django" -->
+    <!-- Lightbox para el proyecto "Proyecto Python Django" -->
     <div id="modal-django" class="modal">
         <div class="modal-content">
+            <!-- Botón de cerrar -->
             <button class="modal-close" data-target="modal-django" aria-label="Cerrar modal" title="Cerrar modal">
                 <picture>
                     <img src="src/icons/close_icon.svg" alt="Cerrar" class="modal-close-icon" />
                 </picture>
             </button>
+
+            <!-- Contenido del modal -->
             <h3>Proyecto Python Django</h3>
             <p class="modal-description">
-                Pequeño proyecto para entrar en contacto con el framework django de python en el que se ha
-                migrado completamente un front-end que es gestionado a través del back-end y una base de datos
-                con modelos adaptados al proyecto.
+                Proyecto práctico de gestión de front-end y base de datos usando Django, trabajando modelos adaptados al
+                proyecto.
             </p>
 
+            <!-- Imagen única del proyecto -->
             <div class="modal-single-img">
                 <picture>
                     <img src="src/img/django_project.jpg" alt="Captura del proyecto Django" />
                 </picture>
             </div>
 
+            <!-- Enlace al repositorio de GitHub -->
             <div class="modal-link">
                 <a href="https://github.com/miguelmorenocolume/Proyecto-Python-Django" target="_blank" rel="noreferrer"
                     aria-label="Ver repositorio en GitHub" title="Ver repositorio en GitHub">
@@ -217,6 +250,7 @@
                     </picture>
                 </a>
             </div>
-            
         </div>
+    </div>
+
     </div>

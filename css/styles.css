@@ -1,164 +1,182 @@
+/* Reset general de márgenes, paddings y box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inconsolata', monospace;
-    user-select: none;
+    user-select: none; /* Evita la selección de texto */
 }
 
+/* Estilo para el scrollbar */
 .body {
-    scrollbar-width: thin;
-    scrollbar-color: #888 transparent;
+    scrollbar-width: thin; /* Scrollbar delgado */
+    scrollbar-color: #888 transparent; /* Color del scrollbar */
 }
 
+/* Estilo para líneas horizontales */
 hr {
-    border: none;
-    margin: 0.5rem 0;
+    border: none; /* Sin borde */
+    margin: 0.5rem 0; /* Margen vertical */
 }
 
+/* Clase para desactivar el scroll del body */
 .body-no-scroll {
-    overflow: hidden;
+    overflow: hidden; /* Oculta el scroll */
 }
 
+/* Fondo fijo para el body */
 .body__background {
     position: fixed;
     top: -1rem;
     left: -1rem;
-    width: 120%;
-    height: 120%;
-    z-index: -1;
-    overflow: hidden;
+    width: 120%; /* Más grande que el viewport */
+    height: 120%; /* Más grande que el viewport */
+    z-index: -1; /* Detrás de todo */
+    overflow: hidden; /* Oculta contenido desbordado */
 }
 
-
+/* Imagen de fondo del body */
 .body__background-image {
-    width: 110%;
-    height: 110%;
-    object-fit: cover;
-    filter: blur(6px);
-    transition: filter 1s ease;
+    width: 110%; /* Más grande que el contenedor */
+    height: 110%; /* Más grande que el contenedor */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    filter: blur(6px); /* Aplica un desenfoque */
+    transition: filter 1s ease; /* Transición suave para el filtro */
 }
 
+/* Menú móvil */
 .mobile-menu {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 15%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09));
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
+    right: -100%; /* Fuera de la pantalla inicialmente */
+    width: 15%; /* Ancho del menú */
+    height: 100%; /* Ocupa toda la altura */
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09)); /* Fondo degradado */
+    transition: right 0.3s ease-in-out; /* Transición para abrir/cerrar */
+    z-index: 1000; /* Encima de otros elementos */
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem; /* Espaciado interno */
 }
 
+/* Menú móvil abierto */
 .mobile-menu.open {
-    right: 0;
+    right: 0; /* Se muestra en pantalla */
 }
 
+/* Lista del menú móvil */
 .mobile-menu__list {
-    list-style: none;
+    list-style: none; /* Sin viñetas */
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: column; /* Elementos en columna */
+    gap: 1.5rem; /* Espaciado entre elementos */
 }
 
+/* Enlaces del menú móvil */
 .mobile-menu__list li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s;
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    transition: color 0.3s; /* Transición para el color */
 }
 
+/* Botón para cerrar el menú móvil */
 .mobile-menu__close {
-    background: none;
-    border: none;
-    align-self: flex-end;
-    cursor: pointer;
-    margin-bottom: 1.5rem;
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    align-self: flex-end; /* Alineado a la derecha */
+    cursor: pointer; /* Cursor de mano */
+    margin-bottom: 1.5rem; /* Margen inferior */
     padding: 0;
 }
 
+/* Icono del botón de cerrar */
 .mobile-menu__close-icon {
-    width: 28px;
-    height: 28px;
-    transition: filter 0.3s;
+    width: 28px; /* Ancho del icono */
+    height: 28px; /* Alto del icono */
+    transition: filter 0.3s; /* Transición para el filtro */
 }
 
+/* Hover en el botón de cerrar */
 .mobile-menu__close:hover .mobile-menu__close-icon {
-    filter: brightness(0.8);
+    filter: brightness(0.8); /* Oscurece el icono */
 }
 
-
+/* Cabecera principal */
 .header {
-    position: relative;
-    padding: 1.5rem;
-    height: 60px;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-
+    position: relative; /* Posición relativa para elementos hijos */
+    padding: 1.5rem; /* Espaciado interno */
+    height: 60px; /* Altura fija */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transiciones suaves */
 }
-
+/* Oculta la cabecera con opacidad y visibilidad */
 .header.hiden {
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
+    pointer-events: none; /* Desactiva los eventos del puntero */
 }
 
+/* Estilo para el icono de la cabecera */
 .header__icon {
     position: absolute;
     top: 1rem;
     right: 1rem;
     width: 32px;
     height: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    cursor: pointer; /* Cambia el cursor a mano */
+    transition: transform 0.3s ease; /* Transición suave al escalar */
 }
 
+/* Oculta el icono en páginas regulares */
 .regular-page .header__icon {
     display: none;
 }
 
+/* Efecto hover para el icono de la cabecera */
 .header__icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Escala ligeramente el icono */
 }
 
-
+/* Estilo para listas no ordenadas */
 ul {
     display: flex;
-    justify-content: center;
-    gap: 4.5rem;
-    list-style: none;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 4.5rem; /* Espaciado entre elementos */
+    list-style: none; /* Sin viñetas */
     padding: 0;
     margin: 0;
-    color: white;
-    letter-spacing: 5px;
+    color: white; /* Color del texto */
+    letter-spacing: 5px; /* Espaciado entre letras */
 }
 
+/* Ajuste de espaciado para la navegación principal */
 .main-page__nav {
-    gap: 9.5rem;
+    gap: 9.5rem; /* Espaciado mayor entre elementos */
 }
 
+/* Estilo para los elementos de lista */
 li {
     position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer; /* Cambia el cursor a mano */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transiciones suaves */
     display: inline-block;
-    font-weight: bold;
+    font-weight: bold; /* Texto en negrita */
 }
 
+/* Estilo para enlaces */
 a {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none; /* Sin subrayado */
+    color: inherit; /* Hereda el color del elemento padre */
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease; /* Transiciones suaves */
     display: inline-block;
-    font-weight: bold;
+    font-weight: bold; /* Texto en negrita */
 }
 
+/* Línea decorativa debajo de los elementos de lista */
 li::after {
     content: '';
     position: absolute;
@@ -166,975 +184,925 @@ li::after {
     left: 0;
     width: 0;
     height: 1px;
-    background-color: white;
-    transition: width 0.3s ease;
+    background-color: white; /* Color de la línea */
+    transition: width 0.3s ease; /* Transición suave para la línea */
 }
 
+/* Efecto hover para la línea decorativa */
 li:hover::after {
-    width: 100%;
+    width: 100%; /* La línea se extiende completamente */
 }
 
+/* Línea decorativa activa */
 li.active::after {
-    width: 100%;
+    width: 100%; /* La línea permanece extendida */
 }
 
-
+/* ===== MAIN PAGE ===== */
+/* Contenedor principal de la página */
 .main-page__container {
-    position: absolute;
-    /* Usamos posición absoluta para colocarlo respecto al viewport */
-    top: 50%;
-    /* Lo posiciona verticalmente al 50% */
-    left: 50%;
-    /* Lo posiciona horizontalmente al 50% */
-    transform: translate(-50%, -50%);
-    /* Ajusta la posición para centrarlo perfectamente */
+    position: absolute; /* Posición absoluta respecto al viewport */
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste para centrar perfectamente */
 
     margin: 0;
     display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09));
-    width: 60%;
-    padding: 2rem 0;
-    border-bottom: white 1px solid;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    flex-direction: column; /* Elementos en columna */
+    color: white; /* Color del texto */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09)); /* Fondo degradado */
+    width: 60%; /* Ancho del contenedor */
+    padding: 2rem 0; /* Espaciado interno */
+    border-bottom: white 1px solid; /* Línea inferior */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
 }
-
 
 /* Animación para el título (zoom y fade-in) */
 .main-page__container-title {
-    font-size: 7rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: zoomFadeIn 0.5s forwards;
+    font-size: 7rem; /* Tamaño grande para el título principal */
+    font-weight: bold; /* Negrita para destacar */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    opacity: 0; /* Inicialmente invisible */
+    transform: scale(0.8); /* Escalado inicial */
+    animation: zoomFadeIn 0.5s forwards; /* Animación de zoom y fade-in */
 }
 
 @keyframes zoomFadeIn {
     0% {
-        opacity: 0;
-        transform: scale(0.8);
+        opacity: 0; /* Comienza invisible */
+        transform: scale(0.8); /* Comienza más pequeño */
     }
 
     100% {
-        opacity: 1;
-        transform: scale(1);
+        opacity: 1; /* Aparece completamente */
+        transform: scale(1); /* Escala normal */
     }
 }
 
 /* Animación para el subtítulo (aparece después del título) */
 .main-page__container-subtitle {
-    font-size: 2.5rem;
-    letter-spacing: 1rem;
-    margin-top: 0;
-    opacity: 0;
-    animation: fadeInSubtitle 0.75s 0.25s forwards;
-
+    font-size: 2.5rem; /* Tamaño del subtítulo */
+    letter-spacing: 1rem; /* Espaciado entre letras */
+    margin-top: 0; /* Sin margen superior */
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeInSubtitle 0.75s 0.25s forwards; /* Animación de fade-in con retraso */
 }
 
 @keyframes fadeInSubtitle {
     0% {
-        opacity: 0;
+        opacity: 0; /* Comienza invisible */
     }
 
     100% {
-        opacity: 1;
+        opacity: 1; /* Aparece completamente */
     }
 }
 
-/* About page container */
+/* ===== ABOUT PAGE ===== */
+/* Contenedor de la página "About" */
 .about-page__container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: left;
-    text-align: justify;
-    width: 80%;
-    max-width: 1200px;
+    position: absolute; /* Posición absoluta para centrar */
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste para centrar perfectamente */
+    color: white; /* Texto blanco */
+    text-align: left; /* Alineación del texto a la izquierda */
+    text-align: justify; /* Justificar texto */
+    width: 80%; /* Ancho del contenedor */
+    max-width: 1200px; /* Ancho máximo */
 }
 
-/* About content (image and text side by side) */
+/* Contenido de la sección "About" (imagen y texto lado a lado) */
 .about-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    display: flex; /* Flexbox para alineación */
+    align-items: center; /* Centrado vertical */
+    justify-content: space-between; /* Espaciado entre elementos */
+    gap: 2rem; /* Espaciado entre imagen y texto */
 }
 
-/* Styles for the image */
+/* Estilos para la imagen */
 .about-image {
-    width: 40%;
-    aspect-ratio: 1 / 1;
-    /* Mantener la imagen cuadrada */
-    object-fit: cover;
-    /* Asegurar que la imagen no se deforme */
-    border-bottom: 2px solid white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: zoomFadeIn 0.5s forwards;
+    width: 40%; /* La imagen ocupa el 40% del ancho */
+    aspect-ratio: 1 / 1; /* Mantener proporción cuadrada */
+    object-fit: cover; /* Ajustar imagen sin deformarla */
+    border-bottom: 2px solid white; /* Línea decorativa inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    animation: zoomFadeIn 0.5s forwards; /* Animación de zoom y fade-in */
 }
 
-/* About text styles */
+/* Estilos para el texto de la sección "About" */
 .about-text {
-    width: 55%;
+    width: 55%; /* El texto ocupa el 55% del ancho */
 }
 
 .about-title {
-    opacity: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    animation: zoomFadeIn 0.5s 0.1s forwards;
+    opacity: 0; /* Inicialmente invisible */
+    font-size: 2.5rem; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    animation: zoomFadeIn 0.5s 0.1s forwards; /* Animación de zoom y fade-in con retraso */
 }
 
 .about-description {
-    opacity: 0;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    animation: zoomFadeIn 0.5s 0.3s forwards;
+    opacity: 0; /* Inicialmente invisible */
+    font-size: 1.25rem; /* Tamaño del texto */
+    line-height: 1.6; /* Altura de línea */
+    animation: zoomFadeIn 0.5s 0.3s forwards; /* Animación de zoom y fade-in con retraso */
 }
 
+/* ===== PROJECTS PAGE ===== */
+/* Contenedor de la página "Projects" */
 .projects-page__container {
-    color: white;
-    text-align: center;
-    width: 95%;
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09));
-    padding: 3rem 2rem;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    box-sizing: border-box;
+    color: white; /* Texto blanco */
+    text-align: center; /* Centrar texto */
+    width: 95%; /* Ancho del contenedor */
+    margin-top: 1rem; /* Margen superior */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09)); /* Fondo degradado */
+    padding: 3rem 2rem; /* Espaciado interno */
+    -webkit-backdrop-filter: blur(10px); /* Desenfoque para Safari */
+    backdrop-filter: blur(10px); /* Desenfoque */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
+    box-sizing: border-box; /* Incluir padding y borde en el tamaño total */
 }
-
+/* Título de la sección de proyectos */
 .projects-title {
-    font-size: 3.5rem;
-    color: white;
-    margin-bottom: 2rem;
-    animation: zoomFadeIn 0.6s ease-in-out forwards;
+    font-size: 3.5rem; /* Tamaño del texto */
+    color: white; /* Color del texto */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    animation: zoomFadeIn 0.6s ease-in-out forwards; /* Animación de entrada */
 }
 
+/* Contenedor de los proyectos */
 .project-box {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 proyectos por fila */
-    gap: 1rem;
-    /* Espacio entre proyectos */
-    justify-items: stretch;
-    width: 100%;
+    display: grid; /* Usamos grid para organizar los proyectos */
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+    gap: 1rem; /* Espaciado entre proyectos */
+    justify-items: stretch; /* Estira los elementos para ocupar el espacio */
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 
+/* Tarjeta de cada proyecto */
 .project-card {
-    display: flex;
-    flex-direction: row;
-    background: rgba(255, 255, 255, 0.08);
-    overflow: hidden;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    padding: 2rem;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-    transform: translateY(30px);
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-    text-align: left;
-    box-sizing: border-box;
-    justify-content: flex-start;
-    border-bottom: 2px solid white;
-    will-change: transform;
-    contain: layout;
+    display: flex; /* Usamos flexbox para organizar contenido */
+    flex-direction: row; /* Elementos en fila */
+    background: rgba(255, 255, 255, 0.08); /* Fondo semitransparente */
+    overflow: hidden; /* Oculta contenido desbordado */
+    -webkit-backdrop-filter: blur(6px); /* Desenfoque para Safari */
+    backdrop-filter: blur(6px); /* Desenfoque */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+    padding: 2rem; /* Espaciado interno */
+    margin: 0; /* Sin margen */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 100%; /* No excede el ancho máximo */
+    transform: translateY(30px); /* Posición inicial para animación */
+    opacity: 0; /* Invisible inicialmente */
+    animation: fadeInUp 0.8s ease-out forwards; /* Animación de entrada */
+    text-align: left; /* Alineación del texto */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+    justify-content: flex-start; /* Alinea contenido al inicio */
+    border-bottom: 2px solid white; /* Línea decorativa inferior */
+    will-change: transform; /* Optimización para animación */
+    contain: layout; /* Mejora el rendimiento */
 }
 
+/* Animación con retraso para cada tarjeta */
 .project-card:nth-child(1) {
-    animation-delay: 0.2s;
+    animation-delay: 0.2s; /* Retraso para la primera tarjeta */
 }
 
 .project-card:nth-child(2) {
-    animation-delay: 0.4s;
+    animation-delay: 0.4s; /* Retraso para la segunda tarjeta */
 }
 
 .project-card:nth-child(3) {
-    animation-delay: 0.6s;
+    animation-delay: 0.6s; /* Retraso para la tercera tarjeta */
 }
 
+/* Animación para un cuarto hijo */
 .project-card:nth-child(4) {
-    animation-delay: 0.8s;
+    animation-delay: 0.8s; /* Retraso para la cuarta tarjeta */
 }
 
+/* Imagen dentro de la tarjeta */
 .project-card img {
-    max-width: 25%;
-    /* La imagen puede ocupar hasta el 100% del ancho disponible */
-    height: auto;
-    /* Mantener la proporción de la imagen */
-    margin-right: 1.5rem;
-    /* Espacio entre la imagen y el texto */
+    max-width: 25%; /* La imagen ocupa hasta el 25% del ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 1.5rem; /* Espaciado entre la imagen y el texto */
 }
 
+/* Contenedor del texto dentro de la tarjeta */
 .project-text {
-    display: flex;
-    flex-direction: column;
-    /* Asegura que el título esté encima del párrafo */
-    text-align: justify;
+    display: flex; /* Usamos flexbox */
+    flex-direction: column; /* Elementos en columna */
+    text-align: justify; /* Justifica el texto */
 }
-
+/* Estilo para el título dentro de cada tarjeta de proyecto */
 .project-card h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    font-size: 1.5rem; /* Tamaño de fuente */
 }
 
+/* Estilo para el texto descriptivo dentro de cada tarjeta de proyecto */
 .project-card p {
-    font-size: 1rem;
-    line-height: 1.4;
+    font-size: 1rem; /* Tamaño de fuente */
+    line-height: 1.4; /* Altura de línea para mejor legibilidad */
 }
 
+/* Línea divisoria entre secciones de proyectos */
 .project-divider {
-    grid-column: 1 / -1;
-    /* Ocupa todas las columnas del grid */
-    height: 2px;
-    background-color: white;
-    opacity: 0.3;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    animation: extendLine 1s ease-in-out forwards;
+    grid-column: 1 / -1; /* Ocupa todas las columnas del grid */
+    height: 2px; /* Altura de la línea */
+    background-color: white; /* Color de la línea */
+    opacity: 0.3; /* Transparencia */
+    margin-top: 2rem; /* Margen superior */
+    margin-bottom: 1rem; /* Margen inferior */
+    animation: extendLine 1s ease-in-out forwards; /* Animación para que la línea aparezca suavemente */
 }
 
-/* Animación opcional para que la línea aparezca suavemente */
+/* Animación para que la línea divisoria se extienda */
 @keyframes extendLine {
     from {
-        width: 0%;
-        opacity: 0;
+        width: 0%; /* Comienza sin ancho */
+        opacity: 0; /* Comienza invisible */
     }
 
     to {
-        width: 100%;
-        opacity: 0.3;
+        width: 100%; /* Se extiende completamente */
+        opacity: 0.3; /* Aparece con transparencia */
     }
 }
 
-
+/* Animación para que los elementos aparezcan desde abajo */
 @keyframes fadeInUp {
     from {
-        transform: translateY(30px);
-        opacity: 0;
+        transform: translateY(30px); /* Comienza desplazado hacia abajo */
+        opacity: 0; /* Comienza invisible */
     }
 
     to {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateY(0); /* Se posiciona en su lugar */
+        opacity: 1; /* Aparece completamente */
     }
 }
 
+/* Estilo para el modal (ventana emergente) */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(5px);
-    justify-content: center;
-    align-items: center;
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija en la pantalla */
+    z-index: 999; /* Encima de otros elementos */
+    left: 0; /* Alineado al borde izquierdo */
+    top: 0; /* Alineado al borde superior */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    overflow: auto; /* Permite scroll si el contenido es más grande */
+    background: rgba(0, 0, 0, 0.9); /* Fondo oscuro con transparencia */
+    backdrop-filter: blur(5px); /* Desenfoque del fondo */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
 
+/* Contenido del modal */
 .modal-content {
-    position: relative;
-    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09));
-    color: white;
-    padding: 2rem;
-    width: 70%;
-    max-height: 95vh;
-    /* evita que se salga del viewport */
-    overflow-y: auto;
-    /* permite hacer scroll si el contenido es más largo */
-    margin: 2rem auto;
-    /* margen vertical para respiración */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.3s ease-out;
-    scrollbar-width: thin;
-    /* Firefox */
-    scrollbar-color: #888 transparent;
-    /* Firefox */
+    position: relative; /* Posición relativa para elementos hijos */
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.09), rgba(83, 196, 248, 0.09)); /* Fondo degradado */
+    color: white; /* Texto blanco */
+    padding: 2rem; /* Espaciado interno */
+    width: 70%; /* Ancho del modal */
+    max-height: 95vh; /* Altura máxima para evitar que se salga del viewport */
+    overflow-y: auto; /* Scroll vertical si el contenido es largo */
+    margin: 2rem auto; /* Centrado con margen vertical */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra */
+    animation: fadeIn 0.3s ease-out; /* Animación de entrada */
+    scrollbar-width: thin; /* Scrollbar delgado (Firefox) */
+    scrollbar-color: #888 transparent; /* Colores del scrollbar (Firefox) */
 }
 
+/* Botón para cerrar el modal */
 .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-    filter: invert(1);
+    position: absolute; /* Posición absoluta dentro del modal */
+    top: 1rem; /* Distancia desde el borde superior */
+    right: 1.5rem; /* Distancia desde el borde derecho */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano */
+    padding: 0; /* Sin padding */
+    z-index: 10; /* Encima del contenido del modal */
+    filter: invert(1); /* Invierte los colores para que sea visible en fondo oscuro */
 }
 
+/* Icono del botón de cerrar */
 .modal-close-icon {
-    width: 24px;
-    height: 24px;
-    filter: invert(1);
-    /* para que sea blanco si es un SVG oscuro */
+    width: 24px; /* Ancho del icono */
+    height: 24px; /* Alto del icono */
+    filter: invert(1); /* Invierte los colores para que sea blanco si es un SVG oscuro */
 }
-
+/* Animación para que los elementos aparezcan con un efecto de desvanecimiento y desplazamiento hacia arriba */
 @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(-20px);
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(-20px); /* Comienza desplazado hacia arriba */
     }
 
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1; /* Aparece completamente */
+        transform: translateY(0); /* Se posiciona en su lugar */
     }
 }
 
+/* Estilo para la descripción dentro del modal */
 .modal-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    text-align: justify;
+    font-size: 1rem; /* Tamaño de fuente */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+    margin-top: 1rem; /* Margen superior */
+    margin-bottom: 1.5rem; /* Margen inferior */
+    text-align: justify; /* Justificar texto */
 }
 
+/* Galería de imágenes dentro del modal */
 .modal-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
+    display: grid; /* Usamos grid para organizar las imágenes */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas adaptables */
+    gap: 1rem; /* Espaciado entre imágenes */
+    margin-bottom: 2rem; /* Margen inferior */
 }
 
-
+/* Estilo para las imágenes dentro de la galería del modal */
 .modal-gallery img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-    display: block;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+    transition: transform 0.3s ease; /* Transición suave al escalar */
+    display: block; /* Se comporta como un bloque */
 }
 
+/* Contenedor para videos dentro del modal */
 .modal-video {
-    width: 75%;
-    margin: 2rem auto 0 auto;
-    /* Centrado horizontal y margen superior */
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 75%; /* Ancho del video */
+    margin: 2rem auto 0 auto; /* Centrado horizontal y margen superior */
+    aspect-ratio: 16 / 9; /* Relación de aspecto */
+    overflow: hidden; /* Oculta contenido desbordado */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
 }
 
+/* Estilo para el iframe del video dentro del modal */
 .modal-video iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 100%; /* Ocupa toda la altura disponible */
+    border: none; /* Sin borde */
+    display: block; /* Se comporta como un bloque */
 }
 
+/* Contenedor para enlaces dentro del modal */
 .modal-link {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
+    display: flex; /* Usamos flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 1.5rem; /* Margen superior */
 }
 
+/* Estilo para el icono de GitHub dentro del modal */
 .github-icon {
-    width: 40px;
-    height: auto;
-    transition: transform 0.3s ease;
+    width: 40px; /* Ancho del icono */
+    height: auto; /* Mantiene la proporción */
+    transition: transform 0.3s ease; /* Transición suave al escalar */
 }
 
+/* Efecto hover para el icono de GitHub */
 .github-icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Escala ligeramente el icono */
 }
 
+/* Contenedor para una sola imagen dentro del modal */
 .modal-single-img {
-    margin: 1.5rem 0;
-    display: flex;
-    justify-content: center;
+    margin: 1.5rem 0; /* Márgenes superior e inferior */
+    display: flex; /* Usamos flexbox */
+    justify-content: center; /* Centra horizontalmente */
 }
 
+/* Estilo para una sola imagen dentro del modal */
 .modal-single-img img {
-    max-width: 100%;
-    height: auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Ancho máximo */
+    height: auto; /* Mantiene la proporción */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
 }
 
 /* ===== SKILLS PAGE ===== */
-
+/* Contenedor principal de la página de habilidades */
 .skills-page__container {
-    color: white;
-    padding: 3rem 2rem;
-    padding-bottom: 0.05rem;
-    width: 95%;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 1rem;
-    text-align: left;
-    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-
+    color: white; /* Texto blanco */
+    padding: 3rem 2rem; /* Espaciado interno */
+    padding-bottom: 0.05rem; /* Ajuste del padding inferior */
+    width: 95%; /* Ancho del contenedor */
+    height: auto; /* Altura automática */
+    margin: 0 auto; /* Centrado horizontal */
+    margin-top: 1rem; /* Margen superior */
+    text-align: left; /* Alineación del texto a la izquierda */
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08)); /* Fondo degradado */
+    backdrop-filter: blur(10px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(10px); /* Desenfoque para Safari */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
 }
 
-/* Título principal */
+/* Título principal de la página de habilidades */
 .skills-title {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    text-align: left;
-    animation: zoomFadeIn 0.6s ease-out forwards;
+    font-size: 3rem; /* Tamaño de fuente */
+    margin-bottom: 3rem; /* Espaciado inferior */
+    text-align: left; /* Alineación del texto a la izquierda */
+    animation: zoomFadeIn 0.6s ease-out forwards; /* Animación de entrada */
 }
 
-/* Sección de categorías */
+/* Sección de categorías de habilidades */
 .skills-section {
-    margin-bottom: 4rem;
-    animation: fadeInUp 0.6s ease-out forwards;
+    margin-bottom: 4rem; /* Espaciado inferior */
+    animation: fadeInUp 0.6s ease-out forwards; /* Animación de entrada */
 }
 
-/* Títulos de cada categoría */
+/* Títulos de cada categoría de habilidades */
 .skills-section__title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: white;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-    display: inline-block;
-    padding-bottom: 0.5rem;
-    width: 100%;
-    /* Esto asegura que la línea ocupe el ancho completo */
-    box-sizing: border-box;
-    /* Asegura que el padding no afecte el ancho total */
-    position: relative;
+    font-size: 1.8rem; /* Tamaño de fuente */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    color: white; /* Color del texto */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Línea decorativa inferior */
+    display: inline-block; /* Se comporta como un bloque en línea */
+    padding-bottom: 0.5rem; /* Espaciado interno inferior */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+    position: relative; /* Posición relativa para elementos hijos */
 }
-
-
 
 /* Lista de habilidades como línea horizontal */
 .skill-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    justify-content: flex-start;
-    /* Esto alinea a la izquierda */
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+    margin-top: 0.5rem; /* Margen superior */
+    display: flex; /* Flexbox para alineación */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas */
+    gap: 0.6rem; /* Espaciado entre elementos */
+    justify-content: flex-start; /* Alineación a la izquierda */
 }
 
-/* Cada badge */
+/* Cada badge de habilidad */
 .skill-item {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    padding: 0.6rem 1rem;
-    font-weight: 500;
-    color: white;
-    justify-content: flex-start;
-
+    display: flex; /* Flexbox para alineación */
+    align-items: center; /* Centrado vertical */
+    gap: 0.6rem; /* Espaciado entre icono y texto */
+    background: rgba(255, 255, 255, 0.06); /* Fondo semitransparente */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+    padding: 0.6rem 1rem; /* Espaciado interno */
+    font-weight: 500; /* Peso de la fuente */
+    color: white; /* Color del texto */
+    justify-content: flex-start; /* Alineación a la izquierda */
 }
 
-
+/* Iconos dentro de cada badge */
 .skill-item img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    flex-shrink: 0;
+    width: 24px; /* Ancho del icono */
+    height: 24px; /* Altura del icono */
+    object-fit: contain; /* Ajusta la imagen sin deformarla */
+    flex-shrink: 0; /* Evita que el icono se reduzca */
 }
 
 /* Animaciones */
 @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(30px);
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(30px); /* Comienza desplazado hacia abajo */
     }
 
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1; /* Aparece completamente */
+        transform: translateY(0); /* Se posiciona en su lugar */
     }
 }
 
-
 /* ===== EDUCATION PAGE ===== */
+/* Contenedor principal de la página de educación */
 .education-page__container {
-    color: white;
-    padding: 3rem 2rem;
-    width: 95%;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 2rem;
-    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    color: white; /* Texto blanco */
+    padding: 3rem 2rem; /* Espaciado interno */
+    width: 95%; /* Ancho del contenedor */
+    height: auto; /* Altura automática */
+    margin: 0 auto; /* Centrado horizontal */
+    margin-top: 2rem; /* Margen superior */
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08)); /* Fondo degradado */
+    backdrop-filter: blur(12px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(12px); /* Desenfoque para Safari */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
 }
 
+/* Título principal de la sección de educación */
 .education-title {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    animation: zoomFadeIn 0.6s ease-out forwards;
-    text-align: left;
+    font-size: 3rem; /* Tamaño de fuente */
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+    animation: zoomFadeIn 0.6s ease-out forwards; /* Animación de entrada */
+    text-align: left; /* Alineación del texto a la izquierda */
 }
 
 /* Sección que contiene todas las tarjetas */
 .education-section {
-    display: grid;
-    gap: 1rem;
-    animation: fadeInUp 0.6s ease-out forwards;
+    display: grid; /* Usamos grid para organizar las tarjetas */
+    gap: 1rem; /* Espaciado entre tarjetas */
+    animation: fadeInUp 0.6s ease-out forwards; /* Animación de entrada */
 }
 
+/* Subtítulo de cada sección de educación */
 .education-subtitle {
-    font-size: 1.8rem;
-    color: #ffffff;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    text-align: left;
-    border-left: 4px solid #ffffff;
-    padding-left: 1rem;
+    font-size: 1.8rem; /* Tamaño de fuente */
+    color: #ffffff; /* Color del texto */
+    margin-top: 1rem; /* Margen superior */
+    margin-bottom: 0.5rem; /* Margen inferior */
+    text-align: left; /* Alineación del texto a la izquierda */
+    border-left: 4px solid #ffffff; /* Línea decorativa a la izquierda */
+    padding-left: 1rem; /* Espaciado interno a la izquierda */
 }
 
 /* Tarjeta de educación */
 .education-card {
-    display: flex;
-    align-items: flex-start;
-    background: rgba(255, 255, 255, 0.06);
-    padding: 1.5rem;
-    gap: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    border-right: 3px solid #ffffff;
+    display: flex; /* Usamos flexbox para organizar contenido */
+    align-items: flex-start; /* Alineación al inicio verticalmente */
+    background: rgba(255, 255, 255, 0.06); /* Fondo semitransparente */
+    padding: 1.5rem; /* Espaciado interno */
+    gap: 1.5rem; /* Espaciado entre elementos */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Sombra */
+    border-right: 3px solid #ffffff; /* Línea decorativa a la derecha */
 }
 
+/* Contenedor de información dentro de la tarjeta */
 .education-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    display: flex; /* Usamos flexbox */
+    flex-direction: column; /* Elementos en columna */
+    gap: 0.4rem; /* Espaciado entre elementos */
 }
 
+/* Título del grado académico */
 .education-degree {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin: 0;
-    color: white;
+    font-size: 1.6rem; /* Tamaño de fuente */
+    font-weight: 600; /* Negrita */
+    margin: 0; /* Sin margen */
+    color: white; /* Color del texto */
 }
 
+/* Nombre de la institución educativa */
 .education-center {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem; /* Tamaño de fuente */
+    color: rgba(255, 255, 255, 0.9); /* Color del texto con transparencia */
 }
 
+/* Fechas de estudio */
 .education-dates {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-style: italic;
+    font-size: 0.95rem; /* Tamaño de fuente */
+    color: rgba(255, 255, 255, 0.7); /* Color del texto con mayor transparencia */
+    font-style: italic; /* Texto en cursiva */
 }
 
-
-
+/* ===== CONTACT PAGE ===== */
+/* Contenedor principal de la página de contacto */
 .contact-page__container {
-    color: white;
-    padding: 3rem 2rem;
-    width: 65%;
-    margin: 0 auto;
-    height: auto;
-    margin-top: 2rem;
-    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    color: white; /* Texto blanco */
+    padding: 3rem 2rem; /* Espaciado interno */
+    width: 65%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+    height: auto; /* Altura automática */
+    margin-top: 2rem; /* Margen superior */
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08)); /* Fondo degradado */
+    backdrop-filter: blur(12px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(12px); /* Desenfoque para Safari */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
 }
 
+/* Título principal de la sección de contacto */
 .contact-title {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    animation: zoomFadeIn 0.6s ease-out forwards;
-    text-align: left;
+    font-size: 2.2rem; /* Tamaño de fuente */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    animation: zoomFadeIn 0.6s ease-out forwards; /* Animación de entrada */
+    text-align: left; /* Alineación del texto a la izquierda */
 }
 
+/* Descripción de la sección de contacto */
 .contact-description {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 0.8);
-    animation: fadeInUp 0.6s ease-out forwards;
+    font-size: 1.1rem; /* Tamaño de fuente */
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+    color: rgba(255, 255, 255, 0.8); /* Color del texto con transparencia */
+    animation: fadeInUp 0.6s ease-out forwards; /* Animación de entrada */
 }
 
+/* Formulario de contacto */
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    animation: fadeInUp 0.6s ease-out forwards;
+    display: flex; /* Usamos flexbox */
+    flex-direction: column; /* Elementos en columna */
+    gap: 1.5rem; /* Espaciado entre elementos */
+    animation: fadeInUp 0.6s ease-out forwards; /* Animación de entrada */
 }
 
-/* === BLOQUES DE FORMULARIO === */
+/* Grupo de campos del formulario */
 .contact-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1rem 1.5rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-
+    display: flex; /* Usamos flexbox */
+    flex-direction: column; /* Elementos en columna */
+    gap: 0.6rem; /* Espaciado entre elementos */
+    background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+    padding: 1rem 1.5rem; /* Espaciado interno */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
 }
-
 /* Etiquetas */
 .contact-label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: white;
+    font-size: 1.1rem; /* Tamaño de fuente para las etiquetas */
+    font-weight: 600; /* Negrita */
+    color: white; /* Color del texto */
 }
 
 /* Inputs y Textarea */
 .contact-input,
 .contact-textarea {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    outline: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 0.75rem 1rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente */
+    color: white; /* Color del texto */
+    outline: none; /* Sin contorno al enfocar */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
 .contact-textarea {
-    resize: none;
-    height: 100px;
+    resize: none; /* Desactiva el redimensionamiento */
+    height: 100px; /* Altura fija */
 }
 
 .contact-file {
-    display: none;
+    display: none; /* Oculta el input de archivo */
 }
 
 /* Estilo del label que actúa como botón */
 .file-upload-label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: left;
-    gap: 0.6rem;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    padding: 0.75rem 1.2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
+    display: inline-flex; /* Flexbox en línea */
+    align-items: center; /* Centrado vertical */
+    justify-content: left; /* Alineación a la izquierda */
+    gap: 0.6rem; /* Espaciado entre icono y texto */
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente */
+    color: white; /* Color del texto */
+    padding: 0.75rem 1.2rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 
 .file-upload-label:hover {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.25); /* Fondo más claro al pasar el ratón */
 }
 
 .file-upload-icon {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.2rem; /* Ancho del icono */
+    height: 1.2rem; /* Altura del icono */
 }
 
 .contact-input:focus,
 .contact-textarea:focus,
 .contact-file:focus {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.25); /* Fondo más claro al enfocar */
 }
 
 /* Botones */
 .contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: -1rem;
+    display: flex; /* Flexbox */
+    justify-content: center; /* Centrado horizontal */
+    gap: 1.5rem; /* Espaciado entre botones */
+    margin-top: 1rem; /* Margen superior */
+    margin-bottom: -1rem; /* Margen inferior negativo */
 }
 
 .contact-button {
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.4rem;
-    background: linear-gradient(135deg, rgba(70, 130, 180, 0.2), rgba(70, 130, 180, 0.1));
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    padding: 0.75rem 2rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 0.4rem; /* Bordes redondeados */
+    background: linear-gradient(135deg, rgba(70, 130, 180, 0.2), rgba(70, 130, 180, 0.1)); /* Fondo degradado */
+    color: white; /* Color del texto */
+    font-weight: 600; /* Negrita */
+    cursor: pointer; /* Cursor de mano */
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Transiciones suaves */
 }
 
 .contact-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Escala ligeramente al pasar el ratón */
 }
 
 .contact-button--reset {
-    background-color: rgba(178, 34, 34, 0.6);
-    color: white;
+    background-color: rgba(178, 34, 34, 0.6); /* Fondo rojo semitransparente */
+    color: white; /* Color del texto */
 }
 
 
 
 /* ====== CV PAGE ====== */
+/* Contenedor principal de la página de CV */
 .cv-page__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 2rem;
-    color: white;
-    margin: 0 auto;
-    margin-top: 2rem;
-    padding: 3rem 2rem;
-    width: 75%;
-    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    display: grid; /* Usamos grid para organizar el contenido */
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales */
+    grid-template-rows: auto auto auto; /* Filas automáticas */
+    gap: 2rem; /* Espaciado entre elementos */
+    color: white; /* Texto blanco */
+    margin: 0 auto; /* Centrado horizontal */
+    margin-top: 2rem; /* Margen superior */
+    padding: 3rem 2rem; /* Espaciado interno */
+    width: 75%; /* Ancho del contenedor */
+    background: linear-gradient(135deg, rgba(196, 83, 248, 0.08), rgba(83, 196, 248, 0.08)); /* Fondo degradado */
+    backdrop-filter: blur(12px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(12px); /* Desenfoque para Safari */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra */
 }
 
 /* Título */
 .cv-title {
-    grid-column: 1 / -1;
-    font-size: 3rem;
-    text-align: left;
-    margin-bottom: 1rem;
-    animation: zoomFadeIn 0.6s ease-out forwards;
+    grid-column: 1 / -1; /* Ocupa todas las columnas */
+    font-size: 3rem; /* Tamaño de fuente */
+    text-align: left; /* Alineación del texto a la izquierda */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    animation: zoomFadeIn 0.6s ease-out forwards; /* Animación de entrada */
 }
 
 /* Carrusel */
 .cv-carousel {
-    grid-row: 2 / span 2;
-    grid-column: 1 / 2;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
+    grid-row: 2 / span 2; /* Ocupa dos filas */
+    grid-column: 1 / 2; /* Primera columna */
+    position: relative; /* Posición relativa para elementos hijos */
+    display: flex; /* Usamos flexbox */
+    flex-direction: column; /* Elementos en columna */
+    justify-content: center; /* Centrado vertical */
+    cursor: pointer; /* Cursor de mano */
 }
 
 .cv-carousel__img {
-    max-width: 100%;
-    display: none;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 100%; /* Ancho máximo */
+    display: none; /* Oculto por defecto */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
 .cv-carousel__img.active {
-    display: block;
+    display: block; /* Visible cuando está activo */
 }
 
 .cv-carousel__dots {
-    grid-column: 1 / 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem;
-    margin-top: 1rem;
+    grid-column: 1 / 2; /* Primera columna */
+    display: flex; /* Usamos flexbox */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    gap: 0.6rem; /* Espaciado entre puntos */
+    margin-top: 1rem; /* Margen superior */
 }
 
 .cv-carousel__dots .dot {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 10px; /* Ancho del punto */
+    height: 10px; /* Alto del punto */
+    background-color: rgba(255, 255, 255, 0.4); /* Color semitransparente */
+    border-radius: 50%; /* Forma circular */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
 }
 
 .cv-carousel__dots .dot.active {
-    background-color: white;
-    transform: scale(1.3);
+    background-color: white; /* Color blanco cuando está activo */
+    transform: scale(1.3); /* Escala mayor */
 }
 
 /* Video */
 .cv-video {
-    grid-column: 2 / 4;
-    grid-row: 3 / 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    grid-column: 2 / 4; /* Ocupa las columnas 2 y 3 */
+    grid-row: 3 / 4; /* Tercera fila */
+    display: flex; /* Usamos flexbox */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
 }
 
 .cv-video__content {
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
 /* Estilo para el contenedor del subtítulo */
 .cv-subtitle {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-    display: flex;
-    /* Usamos flexbox */
-    justify-content: center;
-    /* Centra los íconos horizontalmente */
-    align-items: center;
-    /* Centra los íconos verticalmente */
-    text-align: center;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-bottom: 2px solid white;
-    height: 100%;
-    /* Asegura que el contenedor tenga altura completa */
+    grid-column: 2 / 4; /* Ocupa las columnas 2 y 3 */
+    grid-row: 2 / 3; /* Segunda fila */
+    background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente */
+    padding: 1rem; /* Espaciado interno */
+    display: flex; /* Usamos flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center; /* Texto centrado */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    color: rgba(255, 255, 255, 0.9); /* Color del texto */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+    border-bottom: 2px solid white; /* Línea decorativa inferior */
+    height: 100%; /* Altura completa */
 }
 
 /* Contenedor para los íconos */
 .cv-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Centra los íconos verticalmente dentro del contenedor */
-    gap: 2rem;
-    /* Espacio entre los íconos */
+    display: flex; /* Usamos flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 2rem; /* Espaciado entre íconos */
 }
 
 /* Estilo para los íconos */
 .cv-icon {
-    width: 40px;
-    /* Tamaño base de los íconos */
-    height: 40px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 40px; /* Ancho del ícono */
+    height: 40px; /* Alto del ícono */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
 }
 
 /* Efecto hover en los íconos */
 .cv-icon:hover {
-    opacity: 0.8;
-    /* Da un efecto visual al pasar el ratón */
+    opacity: 0.8; /* Reduce la opacidad */
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ===== FALLBACKS ===== */
 /* Fallback para Safari/iOS si backdrop-filter falla */
+/* Este bloque asegura que los estilos sean compatibles con navegadores que no soportan backdrop-filter */
 @supports (-webkit-touch-callout: none) {
     .project-card {
-        background-color: rgba(255, 255, 255, 0.12);
-        /* Fondo alternativo más sólido */
-        -webkit-backdrop-filter: none !important;
-        backdrop-filter: none !important;
+        background-color: rgba(255, 255, 255, 0.12); /* Fondo alternativo más sólido */
+        -webkit-backdrop-filter: none !important; /* Desactiva el desenfoque en Safari */
+        backdrop-filter: none !important; /* Desactiva el desenfoque en otros navegadores */
     }
 }
 
 
-/* Media Queries */
-
+/* ===== MEDIA QUERIES ===== */
 /* Pantallas grandes y de escritorio (1334px o más) */
 @media (max-width: 1334px) {
     .main-page__container-title {
-        font-size: 5.5rem;
-        /* Ajustar tamaño del título */
+        font-size: 5.5rem; /* Ajustar tamaño del título */
     }
 
     .main-page__container-subtitle {
-        font-size: 1.75rem;
-        /* Ajustar tamaño del subtítulo */
+        font-size: 1.75rem; /* Ajustar tamaño del subtítulo */
     }
 
     .header__icon {
-        width: 32px;
-        /* Ajustar tamaño del icono */
+        width: 32px; /* Ajustar tamaño del icono */
     }
 
     .main-page__container {
-        top: 50%;
-        /* Ajustar la posición del contenedor */
+        top: 50%; /* Ajustar la posición del contenedor */
     }
 
     .mobile-menu {
-        width: 20%;
+        width: 20%; /* Ajustar el ancho del menú móvil */
     }
 
-    /* Para las tablets, ajustar proyectos */
     .project-box {
-        grid-template-columns: 1fr;
-        /* Un solo proyecto por fila */
+        grid-template-columns: 1fr; /* Un solo proyecto por fila */
     }
 
     .project-card img {
-        width: 40%;
-        /* Reducir tamaño de la imagen */
-        margin-bottom: 1rem;
+        width: 40%; /* Reducir tamaño de la imagen */
+        margin-bottom: 1rem; /* Espaciado inferior */
     }
 
     .about-title {
-        font-size: 2rem;
-        /* Ajustar tamaño del título */
+        font-size: 2rem; /* Ajustar tamaño del título */
     }
 
     .about-description {
-        font-size: 1.1rem;
-        /* Ajustar tamaño del párrafo */
+        font-size: 1.1rem; /* Ajustar tamaño del párrafo */
     }
 
     .project-card h3 {
-        font-size: 2rem;
-        line-height: 1.4;
+        font-size: 2rem; /* Ajustar tamaño del título del proyecto */
+        line-height: 1.4; /* Ajustar altura de línea */
     }
 
     .project-card p {
-        font-size: 1.35rem;
-        line-height: 1.4;
+        font-size: 1.35rem; /* Ajustar tamaño del texto del proyecto */
+        line-height: 1.4; /* Ajustar altura de línea */
     }
 
     .modal-content {
-        width: 85%;
-        max-height: 90vh;
-        padding: 2rem;
+        width: 85%; /* Ajustar ancho del modal */
+        max-height: 90vh; /* Ajustar altura máxima del modal */
+        padding: 2rem; /* Ajustar espaciado interno */
     }
-
-
-
 }
 
+/* Media query para pantallas entre 1024px y 1334px de ancho */
 @media (max-width: 1334px) and (min-width: 1024px) {
 
+    /* Ajusta el ancho del contenedor de la página de CV */
     .cv-page__container {
         width: 90%;
-
     }
 
+    /* Ajusta el tamaño máximo del contenido de video en la página de CV */
     .cv-video__content {
         width: auto;
         max-height: 325px;
@@ -1145,155 +1113,180 @@ li.active::after {
 
 /* Pantallas medianas (768px a 1023px) */
 @media (max-width: 1049px) {
+    /* Ajustar tamaño del título principal */
     .main-page__container-title {
         font-size: 4rem;
-        /* Reducir tamaño del título */
     }
 
+    /* Ajustar tamaño del subtítulo */
     .main-page__container-subtitle {
         font-size: 1.5rem;
-        /* Reducir tamaño del subtítulo */
     }
 
+    /* Reducir tamaño del icono en la cabecera */
     .header__icon {
         width: 28px;
-        /* Reducir tamaño del icono */
     }
 
+    /* Mostrar el icono de la cabecera en páginas regulares */
     .regular-page .header__icon {
         display: block;
     }
 
+    /* Ajustar ancho y padding del contenedor principal */
     .main-page__container {
         width: 80%;
         padding: 1.5rem 0;
-        /* Ajustar ancho y padding del contenedor */
     }
 
+    /* Ajustar ancho del menú móvil */
     .mobile-menu {
         width: 100%;
     }
 
+    /* Ocultar el título de la sección "About" */
     .about-title {
         display: none;
     }
 
+    /* Cambiar la dirección de los elementos en la sección "About" */
     .about-content {
         flex-direction: column;
     }
 
+    /* Ajustar tamaño y espaciado de la imagen en la sección "About" */
     .about-image {
         width: 60%;
         margin-bottom: 1.5rem;
     }
 
+    /* Ajustar ancho del texto en la sección "About" */
     .about-text {
         width: 90%;
     }
 
-
+    /* Ajustar tamaño del texto descriptivo en la sección "About" */
     .about-description {
         font-size: 1.1rem;
     }
 
+    /* Ocultar la navegación en la cabecera */
     .header__nav {
         display: none;
     }
 
+    /* Ajustar margen superior en la sección de proyectos */
     .projects-page__container {
         margin-top: 0;
     }
 
+    /* Reducir tamaño de las imágenes en las tarjetas de proyectos */
     .project-card img {
         width: 80%;
-        /* Reducir tamaño de la imagen */
         margin-bottom: 1rem;
     }
 
+    /* Ajustar ancho del texto en las tarjetas de proyectos */
     .project-text {
         width: 100%;
-        /* El texto ocupará todo el ancho disponible */
     }
 
+    /* Ajustar tamaño del título en las tarjetas de proyectos */
     .project-card h3 {
         font-size: 1.3rem;
-        /* Ajustar tamaño del título */
     }
 
+    /* Ajustar tamaño del párrafo en las tarjetas de proyectos */
     .project-card p {
         font-size: 1rem;
-        /* Ajustar tamaño del párrafo */
     }
 
+    /* Ajustar ancho y padding del contenido del modal */
     .modal-content {
         width: 85%;
         padding: 2rem;
     }
 
+    /* Ajustar columnas de la galería en el modal */
     .modal-gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    /* Ajustar margen superior en la sección de habilidades */
     .skills-page__container {
         margin-top: 0;
     }
 
+    /* Ajustar padding en la sección de habilidades */
     .skills-page__container {
         padding: 2rem 1.5rem;
     }
 
+    /* Ajustar tamaño del título en la sección de habilidades */
     .skills-title {
         font-size: 2.5rem;
         margin-bottom: 2.5rem;
     }
 
+    /* Ajustar tamaño del título de cada categoría de habilidades */
     .skills-section__title {
         font-size: 1.6rem;
     }
 
+    /* Reducir espaciado entre elementos de la lista de habilidades */
     .skill-list {
         gap: 0.4rem;
     }
 
+    /* Ajustar padding y tamaño de fuente en los badges de habilidades */
     .skill-item {
         padding: 0.5rem 0.8rem;
         font-size: 0.95rem;
     }
 
+    /* Ajustar tamaño de los iconos en los badges de habilidades */
     .skill-item img {
         width: 20px;
         height: 20px;
     }
 
+    /* Ajustar margen superior en la sección de educación */
     .education-page__container {
         margin-top: 0;
     }
 
+    /* Ajustar tamaño del título en la sección de educación */
     .education-title {
         font-size: 2.5rem;
     }
 
+    /* Ajustar tamaño del subtítulo en la sección de educación */
     .education-subtitle {
         font-size: 1.6rem;
     }
 
+    /* Ajustar tamaño del título del grado académico */
     .education-degree {
         font-size: 1.4rem;
     }
 
+    /* Ajustar tamaño del texto de la institución y fechas */
     .education-center,
     .education-dates {
         font-size: 0.95rem;
     }
 
+    /* Ajustar padding en la sección de educación */
     .education-page__container {
         padding: 2rem 1.5rem;
     }
 
+    /* Ajustar ancho del contenedor de la página de contacto */
     .contact-page__container {
         width: 85%;
     }
 
+    /* Ajustar diseño de la página de CV */
     .cv-page__container {
         display: grid;
         grid-template-columns: 1fr;
@@ -1304,6 +1297,7 @@ li.active::after {
         width: 95%;
     }
 
+    /* Ajustar tamaño del título en la página de CV */
     .cv-title {
         font-size: 2.5rem;
         grid-row: 1 / 2;
@@ -1311,7 +1305,7 @@ li.active::after {
         text-align: center;
     }
 
-
+    /* Ajustar tamaño y alineación del subtítulo en la página de CV */
     .cv-subtitle {
         font-size: 1rem;
         grid-row: 2 / 3;
@@ -1321,6 +1315,7 @@ li.active::after {
         text-align: justify;
     }
 
+    /* Ajustar diseño del carrusel en la página de CV */
     .cv-carousel {
         grid-row: 3 / 4;
         order: 3;
@@ -1331,11 +1326,11 @@ li.active::after {
         gap: 1rem;
     }
 
+    /* Ocultar el video en la página de CV */
     .cv-video {
         display: none;
     }
 }
-
 
 /* Pantallas pequeñas (480px a 767px) */
 @media (max-width: 767px) {
@@ -1354,7 +1349,6 @@ li.active::after {
         width: 24px;
         /* Reducir tamaño del icono */
     }
-
 
     .main-page__nav {
         gap: 4rem;
@@ -1380,7 +1374,6 @@ li.active::after {
         /* Centrar contenido */
         text-align: center;
         /* Centramos todo en el contenedor */
-
         width: 100%;
     }
 
@@ -1411,102 +1404,116 @@ li.active::after {
 
     .modal-gallery {
         display: none;
+        /* Ocultar galería en el modal */
     }
 
     .modal-single-img {
         display: none;
+        /* Ocultar imágenes individuales en el modal */
     }
 
     .skills-page__container {
         padding: 1.5rem 1rem;
+        /* Ajustar padding del contenedor de habilidades */
     }
 
     .skills-title {
         font-size: 2.2rem;
-
+        /* Reducir tamaño del título */
         margin-bottom: 2rem;
     }
 
     .skills-section__title {
         font-size: 1.5rem;
-
+        /* Reducir tamaño del título de cada sección */
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         padding-bottom: 0.3rem;
     }
 
     .skill-list {
         gap: 0.8rem;
-
+        /* Reducir espaciado entre elementos */
     }
 
     .skill-item {
         padding: 0.5rem 1rem;
         font-size: 1rem;
+        /* Ajustar tamaño y padding de los badges */
     }
 
     .skill-item img {
         width: 20px;
         height: 20px;
+        /* Reducir tamaño de los iconos */
     }
 
     .education-title {
         font-size: 2rem;
+        /* Reducir tamaño del título de educación */
     }
 
     .education-subtitle {
         font-size: 1.3rem;
+        /* Reducir tamaño del subtítulo */
     }
 
     .education-degree {
         font-size: 1.2rem;
+        /* Reducir tamaño del título del grado */
     }
 
     .education-center,
     .education-dates {
         font-size: 0.85rem;
+        /* Reducir tamaño del texto de la institución y fechas */
     }
 
     .education-page__container {
         padding: 1.5rem 1rem;
+        /* Ajustar padding del contenedor de educación */
     }
 
     .education-card {
         padding: 1rem;
         gap: 1rem;
+        /* Ajustar padding y espaciado de las tarjetas */
     }
 
     .contact-page__container {
         margin-top: 0;
         width: 95%;
+        /* Ajustar ancho del contenedor de contacto */
     }
 
     .contact-title {
         font-size: 1.8rem;
+        /* Reducir tamaño del título de contacto */
     }
 
     .contact-description {
         font-size: 0.9rem;
+        /* Reducir tamaño del texto descriptivo */
     }
 
     .contact-label {
         font-size: 1rem;
+        /* Reducir tamaño de las etiquetas */
     }
 
     .contact-buttons {
         flex-direction: column;
-    }
-
-    .contact-buttons {
-        flex-direction: column;
+        /* Colocar los botones en columna */
     }
 
     .contact-button {
         width: 100%;
+        /* Botones ocupan todo el ancho */
     }
 
     .cv-carousel__dots .dot {
         width: 5px;
         height: 5px;
+        /* Reducir tamaño de los puntos del carrusel */
     }
 }
 
@@ -1538,21 +1545,23 @@ li.active::after {
         gap: 1.25rem;
         /* Reducir el espacio entre los elementos de la lista */
         font-size: 8px;
+        /* Reducir tamaño de fuente de los elementos de navegación */
     }
-
 
     li::after {
         height: 0.5px;
+        /* Reducir el grosor de la línea decorativa */
     }
 
     .about-description {
         font-size: 0.9rem;
+        /* Reducir tamaño del texto descriptivo */
     }
 
     .about-image {
         width: 70%;
+        /* Ajustar el ancho de la imagen */
     }
-
 
     .projects-title {
         font-size: 2rem;
@@ -1568,18 +1577,21 @@ li.active::after {
         width: 95%;
         padding: 1rem;
         height: auto;
+        /* Ajustar ancho, padding y altura del modal */
     }
 
     .modal-description {
         font-size: 0.75rem;
+        /* Reducir tamaño del texto descriptivo en el modal */
     }
 
     .modal-video {
         width: 90%;
+        /* Ajustar el ancho del video en el modal */
     }
 
     .projects-title {
         font-size: 2rem;
+        /* Ajustar tamaño del título */
     }
-
 }

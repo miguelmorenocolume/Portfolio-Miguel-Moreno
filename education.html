@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fuente externa -->
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-    <!-- Meta tags para Facebook (Open Graph) -->
+
+    <!-- Meta para redes sociales (Open Graph y Twitter) -->
     <meta property="og:title" content="Educación | Miguel Moreno">
     <meta property="og:description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
     <meta property="og:image" content="src/img/miguel_moreno.jpg">
     <meta property="og:url" content="https://mmorenocolume.com/educacion.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Miguel Moreno - Portfolio">
-
-    <!-- Meta tags para Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@miguelmoreno_13">
     <meta name="twitter:title" content="Educación | Miguel Moreno">
@@ -22,31 +23,42 @@
 
     <!-- Meta tags generales -->
     <meta name="description" content="Portfolio Miguel Moreno - Desarrollador de Sofware">
-    <meta name="keywords" content="educación, formación, máster, desarrollo web, aplicaciones multiplataforma, bachillerato, Miguel Moreno">
+    <meta name="keywords"
+        content="educación, formación, máster, desarrollo web, aplicaciones multiplataforma, bachillerato, Miguel Moreno">
     <meta name="author" content="Miguel Moreno">
 
+    <!-- CSS y JS -->
     <link rel="stylesheet" href="css/styles.css" />
     <script src="script/script.js" defer></script>
+
     <title>Miguel Moreno | Educación</title>
 </head>
 
-<body class="body regular-page">
+<body class="body">
+    <!-- Contenedor principal del fondo de la página -->
     <div class="body__background">
         <picture>
-          <source srcset="src/img/background.jpg" media="(min-width: 1024px)">
-          <img id="background" class="body__background-image" src="src/img/background.jpg" alt="" loading="lazy"
-            aria-hidden="true" />
+            <!-- Imagen de fondo para pantallas grandes -->
+            <source srcset="src/img/background.jpg" media="(min-width: 1024px)">
+            <!-- Imagen de fondo por defecto -->
+            <img id="background" class="body__background-image" src="src/img/background.jpg" alt="" loading="lazy"
+                aria-hidden="true" />
         </picture>
-      </div>
+    </div>
 
+    <!-- Encabezado de la página -->
     <header class="header">
         <picture>
+            <!-- Icono del menú para pantallas grandes -->
             <source srcset="src/icons/menu_icon_white.svg" media="(min-width: 1024px)">
+            <!-- Icono del menú por defecto -->
             <img class="header__icon" src="src/icons/menu_icon_white.svg" alt="Icono del menú" loading="lazy" />
-          </picture>
+        </picture>
         <div>
+            <!-- Navegación principal para la versión de escritorio -->
             <nav>
                 <ul class="header__nav">
+                    <!-- Categorías principales del sitio -->
                     <li><a href="index.html" title="Ir a la página de inicio">INICIO</a></li>
                     <li><a href="about.html" title="Conoce más sobre mí">SOBRE MÍ</a></li>
                     <li><a href="projects.html" title="Explora mis proyectos">PROYECTOS</a></li>
@@ -57,13 +69,17 @@
             </nav>
         </div>
     </header>
+    <!-- Menú de navegación para móviles (aparece al hacer clic en el icono de menú) -->
     <nav class="mobile-menu" id="mobileMenu">
+        <!-- Botón para cerrar el menú móvil -->
         <button class="mobile-menu__close" id="closeMenu" aria-label="Cerrar menú" title="Cerrar menú">
             <picture>
+                <!-- Icono de cierre en formato SVG -->
                 <source srcset="src/icons/close_icon.svg" type="image/svg+xml">
                 <img src="src/icons/close_icon.svg" alt="Icono para cerrar el menú" class="mobile-menu__close-icon" />
             </picture>
         </button>
+        <!-- Lista de enlaces del menú móvil -->
         <ul class="mobile-menu__list">
             <li><a href="index.html" title="Ir a la página de inicio">Inicio</a></li>
             <li><a href="about.html" title="Conoce más sobre mí">Sobre mí</a></li>
@@ -73,24 +89,30 @@
             <li><a href="cv.html" title="Descarga mi CV">Cv</a></li>
         </ul>
     </nav>
+
+    <!-- Contenedor principal de la página de educación -->
     <main class="education-page__container general-page__container">
+
+        <!-- Título principal de la sección -->
         <h1 class="education-title">Educación</h1>
 
+        <!-- Sección que contiene todas las etapas educativas -->
         <section class="education-section">
 
-            <!-- POSGRADO -->
+            <!-- Sección de estudios de posgrado -->
             <h2 class="education-subtitle">Estudios de Posgrado</h2>
             <div class="education-card">
                 <div class="education-info">
+                    <!-- Nombre del título -->
                     <h3 class="education-degree">Máster en Diseño Web y FullStack Developer</h3>
+                    <!-- Centro educativo -->
                     <p class="education-center">Centros de Estudios de Innovación</p>
+                    <!-- Fechas de inicio y fin -->
                     <p class="education-dates">Enero 2025 - Junio 2025</p>
                 </div>
             </div>
 
-
-
-            <!-- CFGS -->
+            <!-- Sección de formación profesional de grado superior (CFGS) -->
             <h2 class="education-subtitle">Formación Profesional</h2>
             <div class="education-card">
                 <div class="education-info">
@@ -100,9 +122,7 @@
                 </div>
             </div>
 
-
-
-            <!-- BACHILLERATO -->
+            <!-- Sección de educación secundaria (Bachillerato) -->
             <h2 class="education-subtitle">Educación Secundaria</h2>
             <div class="education-card">
                 <div class="education-info">
@@ -113,6 +133,7 @@
             </div>
 
         </section>
+
     </main>
 
 </body>
